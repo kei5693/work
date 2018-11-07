@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+ <title> test </title>
+ <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+ <link type="text/css" rel="stylesheet" href="css/index.css"/>
+ 
+ <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript" src="js/class_02.js"></script>
+ 
+ <script type="text/javascript" src="js/XRegExp.js"></script>
+ <script type="text/javascript" src="js/shCore.js"></script>
+ <script type="text/javascript" src="js/shBrushJScript.js"></script>
+ <link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+ <link type="text/css" rel="Stylesheet" href="css/shThemeDefault.css" />
+ <script type="text/javascript">SyntaxHighlighter.all();</script>
+		
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="class_02">
+	<div>
+		<h1>변수</h1>
+		<ul>
+			<li>수치나 문자들을 저장해 주는 '상자'</li>
+			<li>대소문자를 구별</li>
+			<li>숫자로 시작 할 수 없다.</li>
+			<li>영문자, 언더바 (_), 달러기호(&)로 시작해야 한다.</li>
+		</ul>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 변수의 선언
+			var a = 1;
+			var _a = 2;	// 언더바
+			var $a = 3;	// 달러기호
+			var 1a = 4;	// 숫자
+			
+			// 줄임표현 (콤마로 구분)
+			var a = 1,
+				_a = 2,
+				$a = 3;
+				
+			// 선언 후 값 변경
+			var a = 1;
+			a = 3;		]]>
+		</script>
+	</div>
+	<div>
+		<h1>변수의 형(type, 데이터의 종류)</h1>
+		<ul>
+			<li>변수에 대입하는 값에 따라 변수형이 자동으로 정해진다.</li>
+			<li>typeof 연산자를 사용하면 변수의 형을 확인 할 수 있다.</li>
+		</ul>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = typeof(123),				// number 수치형
+				b = typeof("Hello World"),		// string 문자열형
+				c = typeof(true),				// string 문자열형
+				d = typeof(window),				// object 오브젝트형
+				e = typeof(null),				// object null형
+				f = typeof(undefined);			// undefined 미정의형			]]>
+		</script>
+		
+		<ul class="var" style="margin-top:10px;">
+			<li><span class="result01"></span></li>
+			<li><span class="result02"></span></li>
+			<li><span class="result03"></span></li>
+			<li><span class="result04"></span></li>
+			<li><span class="result05"></span></li>
+			<li><span class="result06"></span></li>
+		</ul>
+	</div>
+	<div>
+		<h1>데이터형</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 수치형
+			a = 123;
+			b = -5;
+			c = 0.1;
+			d = -2.8;
+			
+			// 논리형 (참, 거짓)
+			a = true;	// 참
+			b = false;	// 거짓
+			
+			// object(오브젝트 참조형) : 오브젝트 참조를 나타내는형
+			
+			// null형 : 값이 없음을 의미하며, 0과는 다르다.
+			a = null;
+			b = 0;
+			a == b;		// false
+			
+			// undefined(미정의형) 변수가 선언은 되었으나 값을 대입하지 않은 상태
+			var qwe;	// 변수를 선언만 한 상태
+			qwe를 실행하면 undefined 반환
+			
+			// 변수의 삭제 : delete 변수명으로 삭제가 가능하지만 객체의 변수만 가능하다. 삭제에 성공하면 true, 실패하면 false를 반환한다.
+			var test = 99;
+			delete test;	// false 반환
+			test를 실행하면 그대로 99를 반환한다.
+			
+			var asd = {x:0, y:1}	// 객체 선언
+			delete asd.x			// true 반환 (x는 삭제)
+			asd를 실행하면 x가 삭제되고 Object {y: 1}를 반환한다.]]>
+		</script>
+	</div>
+	<div>
+		<h1>문자열형</h1>
+		<ul class="interval_list">
+			<li>하나 이상의 문자를 나열한 것</li>
+			<li>"" 큰 따옴표, '' 작은 따옴표로 둘러싼다.</li>
+			<li>typeof 연산자를 실행하면 string 반환</li>
+		</ul>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "Hello World!",
+				b = 'a';
+		]]>
+		</script>
+		
+		<h2>문자열의 연결</h2>
+		<h3>+ 연산자를 사용</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "자바",
+				b = "스크립트",
+				c = a + b;	// 자바스크립트 반환
+		]]>
+		</script>
+		
+		<h2>큰따옴표, 작은 따옴표 사용</h2>
+		<h3>문자열을 큰 따옴표로 감쌌을때 그 안에는 같은 큰 따옴표가 올 수 없다. 작은 따옴표도 동일히다.</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "자바스크립트 "제이쿼리"",	// 에러
+				b = "자바스크립트 '제이쿼리'",	// 자바스크립트 '제이쿼리' 반환
+		]]>
+		</script>
+		
+		<h2>이스케이프 시퀀스</h2>
+		<h3>문자 앞에 이스케이프 문자(\)붙여서 이스케이프 시퀀스라는 특수 문자를 사용하면 따옴표 안에서 같은 따옴표를 사용 할 수 있다.</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 이스케이프 시퀀스
+			
+			\t			// 탭
+			\n			// 줄바꿈
+			\b			// 백스페이스
+			\"			// " 표시
+			\'			// ' 표시
+			\\			// \ 표시
+			\uNNNN		// 16진수로 된 유니코드 문자
+			
+			alert("어서오세요!\n\"Javascript의 세계\"에");		// 이스케이프 시퀀스로 줄바꿈과 큰 따옴표를 사용
+			// 실행하면 아래와 같이 출력 된다.
+			// "어서오세요!
+			// "Javascript의 세계"에"
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>데이터 형 변환</h1>
+		<h2>다른형 연결하기</h2>
+		<h3>문자열 + 숫자형 = 숫자형이 문자형으로 자동 형변환</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "윈도우",
+				b = 10,
+				c = a + b;	// 윈도우10를 반환
+				typeof c	// "string"을 반환. 자동 형변환
+		]]>
+		</script>
+		
+		<h3>숫자형 + 논리형 = 논리형이 숫자형으로 자동 형변환, true는 1, false는 0으로 취급</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = 5,
+				b = true,
+				c = a + b;	// 5 + 1 = 6 반환
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>형변환</h1>
+		<h2>자바스크립트 내장함수를 사용</h2>
+		<h3>parseInt() : 문자열을 정수로 변환.(소수점 절삭)</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "235",
+				num = parseInt(a);		// 숫자형 255 반환
+		]]>
+		</script>
+		
+		<h3>parseFloat() : 문자열을 소수로 변환.</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = "235.36",
+				num = parseInt(a);		// 숫자형 255.36 반환
+		]]>
+		</script>
+		
+		<h3>toString() : 문자열로 변환.</h3>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var a = 255,
+				b = true,
+				str = a.toString(),		// 문자열 "255" 반환
+				boo = b.toString();		// 문자열 "true" 반환
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>산술 연산자</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			+ 덧셈		5 + 5 = 10
+			- 뺄셈		5 - 5 = 0
+			* 곱셈		5 * 5 = 25
+			/ 나눗셈	5 / 5 = 1
+			% 나머지	10 % 3 = 1
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>대입 연산자</h1>
+		<p>변수에 값을 대입한다.</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			a = a + 2;		// a에 2를 더해서 대입한다. 줄임 표현은 a+=2;
+			
+			+=를 복합 대입 연산자라고 부른다
+			
+			+= 더해서 대입
+			-= 빼서 다입
+			*= 곱해서 대입
+			/= 나눠서 대입
+			%= 나머지 대입
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>증가, 감소 연산자</h1>
+		<p>변수를 1씩 증가, 감소 시킬때 사용</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			++ 변수값 1증가
+			-- 변수값 1감소
+		]]>
+		</script>
+		
+		<h2>위치에 따른 차이</h2>
+		<p>변수 앞에 사용하면 전치, 뒤에 하용하면 후치라고 불리며, 연산을 수행하는 타이밍이 달라진다.</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 전치 : 변수를 참조 전에 연산을 수행
+			a = 1;
+			x = ++a;	// a에 1을 더해서 x에 대입(2 반환)
+			// 후치 : 변수를 참조 한 후에 연산을 수행
+			b = 1;
+			y = b++;	// y에 b를 대입 한 후에 b의 값을 증가(y의 값은 1, b의 값은 2)
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>비교 연산자</h1>
+		<p>조건을 만족하는 경우 참(true), 아니면 거짓(false)</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			==		// 같다(값)
+			===		// 같다(값 + 데이터형)
+			!=		// 같지 않다(값)				
+			!===	// 같지 않다(값 or 데이터형이 다르다. 둘중 하나를 만족하거나 둘다 만족하거나)		
+			<		// 작다
+			>		// 크다
+			<=		// 이하
+			>=		// 이상
+			
+			a = 10,
+			b = 20;
+			
+			a < b	// true
+			a > b	// false
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>삼항연산자</h1>
+		<p>조건식의 결과에 따라 다른 처리</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 형식 : 조건식 ? 참 : 거짓
+			point = 90,
+			result = point > 75 ? "합격" : "불합격"		]]>
+		</script>
+	</div>
+	<div>
+		<h1>논리연산자</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			&&	// and	조건 둘다 만족
+			||	// or	조건 둘중 하나라도 만족
+			!	// not	~이 아니다(부정)
+			]]>
+		</script>
+		
+		<h2>조건을 붙여 실행</h2>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			a && b	// a가 false면 b를 판단하지 않고 false
+			a || b	// a가 false여도 b를 판단해서 true / false 반환
+			]]>
+		</script>
+	</div>
+	<div>
+		<h1>연산자 우선 순위</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 우선 순위, 연산자, 연산 방향
+			1  . []										→
+			1  new										←
+			2  ()										→
+			3  ++ --									-
+			4  ! ~ + - typeof void delete				←
+			5  * / %									→
+			6  + -										→
+			7  << >> >>>								→
+			8  < <= > >= in instanceof					→
+			9  == != === !==							→
+			10 &										→
+			11 ^										→
+			12 |										→
+			13 &&										→
+			14 ||										→
+			15 ?:										←
+			16 = += -= *= /= %= <<= >>= >>>= &= ^= |=	←
+			17 ,										→
+			
+			// 연산 방향이 우에서 좌인 연산자
+			new 
+			~ + - typeof void delete
+			?:
+			= += -= *= /= %= <<= >>= >>>= &= ^= |=
+			
+			a + b * c			* +
+			(a + b) * c			() *
+			c = a == b			== = (대입 연산자 연산 방향은 우에서 좌로)
+			a + b - c			+ - (우선순위가 같으면 좌에서 우로)
+			a = b = c = 1		c b a
+		]]>
+		</script>
+	</div>
+</div>
+<!-- //wrap -->
+</body>
+</html>

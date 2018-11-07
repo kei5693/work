@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+ <title> test </title>
+ <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+ <link type="text/css" rel="stylesheet" href="css/index.css"/>
+ 
+ <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript" src="js/class_01.js"></script>
+ 
+ <script type="text/javascript" src="js/XRegExp.js"></script>
+ <script type="text/javascript" src="js/shCore.js"></script>
+ <script type="text/javascript" src="js/shBrushJScript.js"></script>
+ <link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+ <link type="text/css" rel="Stylesheet" href="css/shThemeDefault.css" />
+ <script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="class_01">
+	<div>
+		<h1>자바스크립트 삽입 위치에 따른 차이</h1>		
+		<ul class="interval_list">
+			<li><p>모든 HTML이 파싱된 후 스크립트가 로드되도록 - &lt;/body&gt; 앞이 가장 좋은 위치<br />
+			예외적으로 HTML을 렌더링하거나 그 행동을 결정하는 것을 도와야는 경우는 head 안에서 참조 해야 할 경우도 있으니 선택적으로 위치는 선정하면 된다.</p></li>
+			<li><h2>head 안에 삽입되는 경우</h2>
+			<p>브라우저는 HTML, CSS를 렌더링하는 도중 자바스크립트를 만나면 스크립트가 완료될때까지 브라우저 렌더링을 멈춘다<br />
+			만약 무거운 스크립트가 실행된다면 브라우저 렌더링에 방해가 되어 오랫동안 완성되지 못한 화면을 노출할 수도 있다.</p></li>
+			<li><h2>&lt;/body&gt; 앞에 삽입되는 경우</h2>
+			<p>브라우저 렌더링 완료 후 스크립트가 실행되기에 콘텐츠를 변경하는 스크립트가 있다면 화면에 모두 적용되어 보여진다.</p></li>
+		</ul>
+	</div>
+	
+	<div class="ex01">
+		<h1>제이쿼리 이벤트 만들기</h1>
+		<ul class="interval_list">
+			<li><button type="button" class="btn01">click1</button> <button type="button" class="btn02">click2</button></li>
+			<li><ul class="btn03">
+					<li><a href="#">클릭 이벤트</a></li>
+					<li><a href="#">클릭 이벤트</a></li>
+					<li><a href="#">클릭 이벤트</a></li>
+				</ul>
+			</li>
+			<li><ul class="btn04">
+					<li><a href="#">클릭 이벤트</a></li>
+					<li><a href="#">클릭 이벤트</a></li>
+					<li><a href="#">클릭 이벤트</a></li>
+				</ul>
+			</li>
+		</li>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex01 .btn01").click(function(){
+				alert("1");
+			});
+			
+			$(".ex01 .btn02").on('click', function(){
+				alert("2");
+			});
+			
+			$(".ex01 .btn03 a").click(function(){
+				alert("3");
+			});
+			
+			$(".ex01 .btn04 a").on('click', function(){
+				alert("4");
+				// a의 수가 많을 수록 메모리 사용이 많아진다.
+			});
+			
+			$(".ex01 .btn04").on('click', 'a', function(){
+				alert("4");
+				// 가장 최적화 된 방식
+			});
+		]]>
+		</script>
+	</div>
+	
+	<div class="ex02">
+		<h1>click과 on click 차이</h1>
+		<ul class="interval_list">
+			<li>메모리를 적게 사용하며, 동적으로 할당되는 요소(태그)에 대응이 가능하다.</li>
+			<li>on으로 이벤트를 걸었다면 off로 이벤트를 해제할 수 있다.</li>
+			<li>아래 2개의 예제는 add button을 클릭하면 새로 버튼이 동적으로 생성된다.</li>
+		</ul>
+		<br /><br />
+		<button class="btn_add">add button1</button>
+		<div class="add_box">
+			<button class="alert">alert!</button>
+		</div>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 동적 생성 버튼을 클릭하면 아무 반응이 없다.
+			$(".ex02 .btn_add").click(function(){
+				var html = "<button class='alert'>추가버튼</button>";
+				$(".ex02 .add_box").append(html);
+			});
+			$(".ex02 .alert").click(function(){
+				alert(1);
+			});		]]>
+		</script>
+		
+		<br /><br />
+		<button class="btn_add02">add button2</button>
+		<div class="add_box02">
+			<button class="alert">alert!</button>
+		</div>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 동적 생성 버튼을 클릭해고 alert창이 뜬다.
+			$(".ex02 .btn_add02").on('click', function(){
+				var html = "<button class='alert02'>추가버튼2</button>";
+				$(".ex02 .add_box02").append(html);
+			});
+			$(".ex02").on('click', '.alert02', function(){
+				alert(2);
+			});		]]>
+		</script>
+	</div>
+	
+	<div class="ex03">
+		<h1>이벤트의 해제</h1>
+		<button type="button" class="click1">click1</button>
+		<button type="button" class="off">off</button>
+		<button type="button" class="on">on</button>
+		<p>click1을 클릭하면 click이 출력되지만 off를 클릭하면 이벤트 실행을 멈춰서 아무 반응이 없게되고, 다시 on을 클릭하면 이벤트가 활성화되어 click을 출력한다.</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex03 .click1").on('click', clickAlert);
+			$(".ex03 .off").on('click', function(){
+				$(".ex03 .click1").off('click', clickAlert);
+			});
+			$(".ex03 .on").on('click', function(){
+				$(".ex03 .click1").on('click', clickAlert);
+			});
+			
+			function clickAlert(){
+				alert("click");
+			}		]]>
+		</script>
+	</div>
+	
+	<div>
+		<h1>이벤트 전파(흐름)</h1>
+		<ul class="interval_list">
+			<li>계층적 구조의 포함되어 있는 특정 엘리먼트에 이벤트가 발생할 경우, 연쇄적인 반응</li>
+			<li><strong>버블링(상향식) : </strong> 해당 이벤트 요소로부터 이벤트 요소를 포함한 부모 요소까지 올라가며 이벤트를 검사</li>
+			<li><strong>캡쳐링(하향식) : </strong> 해당 이벤트 요소를 포함하는 부모 HTML부터 이벤트의 근원지인 자식 요소까지 이벤트를 검사(IE8 이하 미지원)</li>
+		</ul>
+		
+	</div>
+	
+	<div class="ex04">
+		<h1>이벤트 전파를 막는 방법</h1>
+		<div class="div">DIV영역
+			<p class="p">P영역
+				<span class="span01">SPAN영역(버블링 : 상향식)</span>
+				<span class="span02">전파막기</span>
+			</p>
+		</div>
+		<p>박스의 가장 안쪽 span을 클릭하면 버블링이 일어나서 span01, p, div 순으로 alert창이 뜬다.</p>
+		<p>전파막기를 클릭하면 이벤트 전파를 막는 stopPropagation()를 실행해서 버블링이 일어나지 않는다.</p>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			<div class="div">DIV영역
+				<p class="p">P영역
+					<span class="span01">SPAN영역</span>
+					<span class="span02">전파막기</span>
+				</p>
+			</div>
+			
+			$(".ex04 .div").on("click",function(){
+				alert("div");
+			});
+
+			$(".ex04 .p").on("click",function(){
+				alert("p");
+			});
+
+			$(".ex04 .span01").on("click",function(){
+				alert("span01");
+			});
+			
+			$(".ex04 .span02").on("click",function(e){
+				e.stopPropagation();
+				alert("span02");
+			});			]]>
+		</script>
+	</div>
+	
+	<div class="ex05">
+		<h1>이벤트의 기본 동작을 중단하는 방법</h1>
+		<p class="title_sub">preventDefault(), return false</p>
+		
+		<ul class="interval_list">
+			<li><a href="#" class="link01">href="#"</a></li>
+			<li><a href="#none" class="link02">href="#none"</a></li>
+			<li><a href="http://www.naver.com" class="link03">e.preventDefault()</a></li>
+			<li><a href="http://www.naver.com" class="link04">return false</a></li>
+		</ul>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex05 .link03").on("click",function(e){
+				e.preventDefault();		// 이름 그대로 기본 동작을 취소
+				alert("preventDefault");
+			});
+			
+			$(".ex05 .link04").on("click",function(e){
+				alert("return false");
+				return false;			// jquery를 이용한 이벤트의 경우 return false를 사용하면 stopPropagation + preventDefault 효과
+			});		]]>
+		</script>
+	</div>
+	
+	<div class="ex06">
+		<h1>이벤트의 종류1/2</h1>
+		<p class="title_sub">마우스, 키보드 이벤트</p>
+		<ul class="interval_list">
+			<li><button type="button" class="click">클릭</button> <button type="button" class="dblclick">더블클릭</button>
+			<script type="syntaxhighlighter" class="brush: js;">
+				<![CDATA[
+					$(".ex06 .click").on("click",function(){
+						alert("click");
+					});
+					$(".ex06 .dblclick").on("dblclick",function(e){
+						alert("dblclick");
+					});		]]>
+			</script>
+			</li>
+			<li><div class="mouse mouse01">mouseenter / mouseleave <p></p></div>
+				<script type="syntaxhighlighter" class="brush: js;">
+				<![CDATA[
+					$(".ex06 .mouse01").on("mouseenter",function(e){
+						$(".ex06 .mouse01 p").text("mouseenter");
+					}).mouseleave(function(){
+						$(".ex06 .mouse01 p").text("mouseleave");
+					});	]]>
+				</script>			
+			</li>
+			<li><div class="mouse mouse02">mousedown / mouseup <p></p></div>
+				<script type="syntaxhighlighter" class="brush: js;">
+				<![CDATA[
+					$(".ex06 .mouse02").mousedown(function(){
+						$(".ex06 .mouse02 p").text("mousedown");
+						$(".ex06 .mouse02").mousemove(function(){
+							$(".ex06 .mouse02 p").text("mousemove");
+						});
+					}).mouseup(function(){
+						$(".ex06 .mouse02").off("mousemove");
+						$(".ex06 .mouse02 p").text("mouseup");
+					});		]]>
+				</script>
+			</li>
+			<li><div class="wheel">mouselwheel <p></p></div>
+				<script type="syntaxhighlighter" class="brush: js;">
+				<![CDATA[
+					$(".ex06 .wheel").on('mousewheel DOMMouseScroll', function(e){
+						e.preventDefault();	// 기본동작을 취소하는 e.preventDefault()를 사용하면 휠의 상하 방향은 감지 하지만 스크롤 이벤트는 일어나지 않는다.
+						
+						var E = e.originalEvent;
+						delta = 0;
+
+						E.detail ? delta = E.detail * -40 : delta = E.wheelDelta;
+						// ff의 경우 detail을 사용, 나머지는 wheelDelta를 사용
+						// wheelDelta의 경우 down은 -120, up의 경우 120을 반환
+						// detail 경우 down은 3, up의 경우 -3을 반환하기에 다른 브라우저와 값을 맞추기 위에 * -40을 추가
+						
+						delta < 0 ? alert("down : " + delta) : alert("up : " + delta);
+					});		]]>
+				</script>			
+			</li>
+			<li><div class="keyboard">keydown <input type="text" />	<span></span></div>
+				<script type="syntaxhighlighter" class="brush: js;">
+				<![CDATA[
+					$(".ex06 .keyboard input").on('keydown', function(e){
+						$(".ex06 .keyboard span").text(e.keyCode);
+					});	// 어떤 키를 눌렀는지 확인 할 수 있다.
+					]]>
+				</script>
+			</li>
+		</ul>
+		
+		
+	</div>
+	
+	<div class="ex07">
+		<h1>이벤트의 종류2/2</h1>
+		<p class="title_sub">scrollTop() / scrollLeft()<br />스크롤 수직, 수평 위치 값을 설정할 수 있다.</p>
+		<div class="scroll01">
+			<div>
+				<div></div>
+			</div>
+		</div>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex07 .scroll02 > div").scrollTop(300).scrollLeft(200);	/* 스크롤 Y축 300, X축 200위치로 스크롤 */ 			]]>
+		</script>
+		
+		<p class="title_sub">스크롤 이벤트<br />스크롤 이벤트가 발생할 때마다 정해진 코드를 실행 할 수 있다.</p>
+		<div class="scroll02">
+			<p>0</p>
+			<p class="offset">off</p>
+			<div>
+				<div>
+					
+				</div>
+			</div>
+		</div>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex07 .scroll02 > div").scroll(function(){
+				var scrollTop = $(this).scrollTop();
+				$(".ex07 .scroll02 > p").text(scrollTop); // 스크롤을 하면 스크롤 Y축의 값을 출력한다.
+				
+				// 스크롤 값 300을 기준으로 분기
+				if(scrollTop < 300){
+					$(".ex07 .scroll02 .offset").text("off");
+				} else {
+					$(".ex07 .scroll02 .offset").text("on");
+				}
+			});			]]>
+		</script>
+		
+		<p class="title_sub">callback : 이벤트 실행 후 실행</p>
+		<p>이벤트가 실행 된 후에 실행 시켜야 할 함수가 있다면 그 시간을 따로 계산 할 필요 없이<br />기존 이벤트에 이어서 사용하면 이벤트가 종료 된 다음 실행이 된다.</p>
+		
+		<div class="callback">
+			<button type="button">animate</button>
+			<span class="ani">animate</span>
+		</div>
+		
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex07").on("click", 'button', function(){
+				$(".ex07 span").animate({"margin-left" : "200px"},1000,function(){
+					$(".ex07 span").text("이벤트 종료");
+				});
+			});		]]>
+		</script>
+	</div>
+	
+	<!-- interval setTimeout -->
+	<div class="ex08">
+		<h1>자주 사용하는 javascript</h1>
+		<p class="title_sub">setTimeout<br />정해진 시간뒤에 코드를 실행(1회성)</p>
+		<div class="set_timeout">
+			<button type="button">start</button>
+		</div>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex08").on("click", '.set_timeout > button', function(){
+				// 2초뒤 alert 출력, 1000 은 1초
+				setTimeout(function(){
+					alert("Hello");
+				}, 2000);
+			});					]]>
+		</script>
+		
+		<p class="title_sub">setInterval<br />정해진 시간 간격으로 코드를 반복 실행</p>
+		<p class="title_sub">clearInterval<br />반복 실행 중단</p>
+		<div class="set_interval">
+			<button type="button" class="start">start</button>
+			<button type="button" class="stop">stop</button>
+			<span class="count">0</span>
+		</div>
+		<p>start를 누르면 반복 실행한 만큼 숫자로 표시되며 stop을 누르면 반복실행을 중단한다.</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var interval = null,
+				num = 0;
+			// interval을 포함한 함수 0.1초마다 반복실행
+			function intervalFunc(){
+				interval = setInterval(function(){
+					num++;
+					$(".ex08 .count").text(num);
+				}, 100);
+			}
+				
+			$(".ex08").on("click", '.set_interval .start', function(){
+				// interval을 포함한 함수 실행
+				intervalFunc();
+			});
+			
+			$(".ex08").on("click", '.set_interval .stop', function(){
+				// interval 중지
+				clearInterval(interval);
+			});					]]>
+		</script>
+	</div>
+</div>
+<!-- //wrap -->
+</body>
+</html>

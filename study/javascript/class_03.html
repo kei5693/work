@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+ <title> test </title>
+ <link type="text/css" rel="stylesheet" href="css/reset.css"/>
+ <link type="text/css" rel="stylesheet" href="css/index.css"/>
+ 
+ <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+ <script type="text/javascript" src="js/class_02.js"></script>
+ 
+ <script type="text/javascript" src="js/XRegExp.js"></script>
+ <script type="text/javascript" src="js/shCore.js"></script>
+ <script type="text/javascript" src="js/shBrushJScript.js"></script>
+ <link type="text/css" rel="stylesheet" href="css/shCore.css"/>
+ <link type="text/css" rel="Stylesheet" href="css/shThemeDefault.css" />
+ <script type="text/javascript">SyntaxHighlighter.all();</script>
+		
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="class_02">
+	<div>
+		<h1>if문</h1>
+		<p>조건에 따라 다른 처리</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 형식
+			if(조건){
+				조건이 참인 경우
+			} else {
+				조건이 거짓인 경우
+			}
+			
+			// 
+			a = 5;
+			if(a % 2 == 0){
+				document.write(a, "는 짝수입니다.");
+			} else {
+				document.write(a, "는 홀수입니다.");
+			}
+			
+			//
+			if(a % 2 == 0) document.write(a, "는 짝수입니다.");
+			else document.write(a, "는 홀수입니다.");
+		]]>
+		</script>
+	</div>
+	<div>
+		<h1>여려가지 if문</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 다중 if문
+			if(조건1){
+				처리1
+			} else if(조건2){
+				처리2
+			} else if(조건3){
+				처리3
+			} else {
+				// 모든 조건을 만족하지 않는 경우
+				처리4
+			}
+			
+			// 내포 if문
+			if(조건1){
+				if(조건2){
+					조건1 + 조건2를 만족하는 경우
+				} else {
+					조건1만 만족하는 경우
+				}
+			} else {
+				조건1을 만족하지 않은 경우
+			}
+		]]>
+		</script>
+	</div>
+	<div class="ex01">
+		<h1>for문</h1>
+		<p>반복처리를 위한 제어문</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			// 형식
+			for(var i=0; i <4; i++){
+				처리
+			}
+			/*
+				i		카운터
+				i=0		카운터 초기값 
+				i<4 	반복할 조건
+				i++ 	카운터 증가 방법
+			*/
+			
+			$(".ex01").on('click', '> button', function(){
+				for(var i=0; i <4; i++){
+					$(".ex01 .result").append(i);
+				}
+			});		]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>		
+	</div>
+	<div class="ex02">
+		<h1>다중for문</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			$(".ex02").on('click', '> button', function(){
+				for(i=1; i<=9; i++){
+					$(".ex02 .result").append(i+"단<br>");
+					
+					for(j=1; j<=9; j++){
+						$(".ex02 .result").append(i + "x" + j + "=" + i*j +"<br>");
+					}
+				}
+			});		]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>
+	</div>
+	<div class="ex02_01">
+		<h1>for in 반복문</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var array = [1,2,3,4,5,6,7,8,9,10];
+			for (property in array){
+				$(".ex02_01 .result").append(array[property]+"<br>");
+			}			]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>		
+	</div>
+	<div class="ex03">
+		<h1>while문</h1>
+		<p>조건이 성립되는 동안 반복처리(반복처리 횟수가 정해지지 않았을 경우 사용)</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			//
+			while(조건식){
+				조건식이 참일때 반복실행 처리
+			}
+				
+			var i = 0;
+			while (i < 10){
+				$(".ex03 .result").append(i);
+				i++;
+			}				]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>
+		
+		<h2>무한루프에 주의</h2>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			//
+			var i = 0;
+			while (i < 10){
+				$(".ex03 .result").append(i);
+				// i++; 증가 부분이 없을 경우 조건식을 빠져 나가지 못해서 무한루프
+			}				]]>
+		</script>
+	</div>
+	<div class="ex04">
+		<h1>do ~ while문</h1>
+		<p>do문 안의 코드 실행후 while문을 실행. 무조건 한 번은 실행된다.</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			//
+			do(조건식){
+				반복처리 코드
+			} while(조건식)
+			
+			var i = 10;
+			do {
+				document.write(i + " ");
+				i++;
+			} while (i < 10);		]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>
+		
+		
+	</div>
+	<div class="ex05">
+		<h1>break : 반복 실행 중단</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			for (var i = 1; i < 100; i++) {
+				if (i == 15) {
+					break;
+				}
+				$(".ex05 .result").append(i+"<br>");
+			}		]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>
+	</div>
+	<div class="ex06">
+		<h1>continue : 현제 반복 실행을 중단하고 다음번 반복 처리를 실행</h1>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			for (var i = 1; i < 10; i++) {
+				if (i < 5) {
+					continue;
+				}
+				$(".ex06 .result").append(i+"<br>");
+			}			]]>
+		</script>
+		<button type="button">실행</button>
+		<p class="result"></p>
+	</div>
+	<div class="ex07">
+		<h1>switch문</h1>
+		<p>조건이 많은 분기처리</p>
+		<script type="syntaxhighlighter" class="brush: js;">
+		<![CDATA[
+			var btnText = $(this).text();
+			switch (btnText) {
+				case "1":
+					$(".ex07 .result").append("number1"+"<br>");
+					break;
+				case "2":
+					$(".ex07 .result").append("number2"+"<br>");
+					break;
+				case "3":
+					$(".ex07 .result").append("number3"+"<br>");
+					break;
+				default:
+					$(".ex07 .result").append("unknown"+"<br>");
+			}	
+			/*
+				여러개의 case 선택사항중에서 식의 값에 맞는 분기를 실행
+				각 case를 실행 후에 반드시 break으로 반복 실행을 중단해야 한다.
+				어느 case와도 맞지 않을 경우 default의 처리를 실행
+			*/
+		]]>
+		</script>
+		<button type="button">1</button>
+		<button type="button">2</button>
+		<button type="button">3</button>
+		<button type="button">4</button>
+		<p class="result"></p>
+	</div>
+</div>
+<!-- //wrap -->
+</body>
+</html>
