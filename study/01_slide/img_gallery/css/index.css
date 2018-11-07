@@ -1,0 +1,32 @@
+﻿@charset "utf-8";
+
+.img_gallery {position:relative;background:#333237;width:730px;margin:0 auto;}
+.img_gallery .visual {width:587px;margin:0 auto;padding-top:50px;text-align:center;color:#fff;}
+.img_gallery .visual .img {position:relative;width:587px;height:390px;background:#b1aeae;}
+.img_gallery .visual .img img {position:absolute;top:0;left:0;height:100%;border:1px solid #B1AEAE;}
+.img_gallery .visual .text {padding:10px 0;}
+.img_gallery .visual .text .tit {}
+.img_gallery .visual .text .num {font-weight:bold;}
+.img_gallery .visual .text .num .firstNum {color:#49bf20;}
+.img_gallery .visual .text .num .lastNum {}
+.img_gallery .visual > button {display:none;position:absolute;top:50%;margin-top:-90px;width:21px;height:42px;border:0 none;cursor:pointer;text-indent:-9999px;}
+.img_gallery .visual .prev {left:20px;background:url('../image/bg_arrow01.png') no-repeat 0 0;}
+.img_gallery .visual .prev:hover {background-position:0 -45px;}
+.img_gallery .visual .next {right:20px;background:url('../image/bg_arrow01.png') no-repeat -25px 0;}
+.img_gallery .visual .next:hover {background-position:-25px -45px;}
+
+.img_gallery .thum {position:relative;padding:15px 0;background:#f6f6f6;border:1px solid #cdcdcd;border-top:0 none;}
+.img_gallery .thum > div {position:relative;overflow:hidden;width:642px;height:60px;margin:0 auto;}
+.img_gallery .thum > div > ul {height:60px;margin-left:-2px;}
+.img_gallery .thum > div > ul > li {position:relative;float:left;padding-left:2px;width:90px;height:60px;}
+/* .img_gallery .thum > div > ul > li:first-child {padding-left:0;} */
+.img_gallery .thum > div > ul > li:hover {cursor:pointer;}
+.img_gallery .thum > div > ul > li img {width:88px;height:58px;border:1px solid #101011;}
+.img_gallery .thum > button {position:absolute;top:50%;margin-top:-10px;width:10px;height:19px;border:0 none;cursor:pointer;text-indent:-9999px;}
+.img_gallery .thum .prev {display:none;left:15px;background:url('../image/bg_arrow02.png') no-repeat 0 0;}
+.img_gallery .thum .prev:hover {background-position:0 -25px;}
+.img_gallery .thum .next {right:15px;background:url('../image/bg_arrow02.png') no-repeat -15px 0;}
+.img_gallery .thum .next:hover {background-position:-15px -25px;}
+
+.img_gallery .thum > div .mask {position:absolute;top:0px;left:0px;width:84px;height:54px;border:3px solid #49bf20;background:url("../image/bg_mask_opa50.png") repeat;}
+

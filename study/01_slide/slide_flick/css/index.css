@@ -1,0 +1,8 @@
+﻿@charset "utf-8";
+body {background:#e4e4e4;}
+#wrap {width:810px;margin:0 auto;}
+.slide {overflow:hidden;margin-top:100px;height:250px;border:5px solid #000;}
+.slide > ul {position:relative;height:100%;}
+.slide > ul > li {position:absolute;top:0;left:0;width:100%;height:100%;text-align:center;line-height:250px;font-size:100px;font-weight:bold;background:wheat;}
+.slide > ul > li:nth-child(2) {background:coral;}
+.slide > ul > li:nth-child(3) {background:tomato;}
