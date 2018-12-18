@@ -19,3 +19,16 @@
 
 ### 말줄임 플러그인
 - [text_ellipsis](https://kei5693.github.io/work/study/etc/text_ellipsis/index.html) : width, line 지정
+
+### 애니메이션 루프
+- [loop_01](https://kei5693.github.io/work/study/animate/animate_loop/index.html) : 제이쿼리
+- [loop_02](https://kei5693.github.io/work/study/animate/animate_loop/index02.html) : 자바스크립트
+
+### 디자인 스크롤 플러그인
+- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스 이동
+
+### 스크롤 이벤트
+- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : aside를 스크롤에 맞춰서 제어
+
+### 마우스 이벤트
+- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미자 확대
