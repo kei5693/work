@@ -1,22 +1,31 @@
-﻿$(function(){
-	$(".ellipsis").each(function(){
-		var el = $(this),
-			text = el.html(),
-			num = parseInt($(this).css("line-height")),
-			viewLine = 2,
-			calHeight = viewLine * num,
-			t = $(this.cloneNode(true));
-		$(this).height(calHeight);
-		el.after(t);
+﻿;(function($){
+	$.fn.ellipsis = function(option){
+		var opts = $.extend({}, $.fn.ellipsis.default, option);
 
-		function height(){return t.height() > el.height()}
+		return this.each(function(){
+			var el = $(this),
+				text = el.html(),
+				num = parseInt($(this).css("line-height")),
+				calHeight = opts.viewLine * num;
 
-		while(text.length > 0 && height()){
-			text = text.substr(0, text.length-1);
-			t.html(text + "...");
-		}
-		
-		el.html(t.html());
-		t.remove();
-	});
-});
+			// width 옵션 있을 경우
+			if(opts.width){el.width(opts.width)}
+			t = el.clone();
+			el.height(calHeight).after(t);
+			function height(){return t.height() > el.height()}
+
+			for(var i = text.length; i > 0 && height(); i--){
+				// 마지막 공백 제거
+				text = text.substr(0,i).replace(/(^\s*)|(\s*$)/gi, "");
+				t.html(text + "...");
+			}
+
+			el.html(t.html()).css("height", "");
+			t.remove();
+		});
+	}
+
+	$.fn.ellipsis.default = {
+		viewLine : 2
+	}
+})(jQuery);
