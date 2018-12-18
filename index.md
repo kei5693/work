@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## 오경훈 Porfolio
 
-You can use the [editor on GitHub](https://github.com/kei5693/work/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+퍼블리셔로 프로젝트와 스터디를 하면서 만들었던 스크립트를 정리해 놓은 페이지입니다.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 자바스크립트 기초 스터디 내용 정리
+- [class_01](https://kei5693.github.io/work/study/javascript/class_01.html) : 제이쿼리 이벤트 만들기
+- [class_02](https://kei5693.github.io/work/study/javascript/class_02.html) : 자바스크립트 기본 문법(변수, 데이터형, 연산자)
+- [class_03](https://kei5693.github.io/work/study/javascript/class_03.html) : 자바스크립트 기본 문법(if문, 반복문)
+- [class_04](https://kei5693.github.io/work/study/javascript/class_04.html) : 자바스크립트 기본 문법(함수, 배열)
+- [class_05](https://kei5693.github.io/work/study/javascript/media_queries.html) : 미디어쿼리
 
-### Markdown
+### 슬라이드
+- [slide_01](https://kei5693.github.io/work/study/slide/prototype_slide/index.html) : 플러그인, 버튼, 페이징, 슬라이드 사이즈 대응
+- [slide_02](https://kei5693.github.io/work/study/slide/slide_increase01/index.html) : 버튼, 슬라이드 확대
+- [slide_03](https://kei5693.github.io/work/study/slide/slide_increase02/index.html) : 버튼, 슬라이드 확대, 시작/정지
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 이미지 갤러리
+- [img_gallery](https://kei5693.github.io/work/study/slide/img_gallery/index.html) : 네이버 이미지 갤러리 변형
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kei5693/work/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### 말줄임 플러그인
+- [text_ellipsis](https://kei5693.github.io/work/study/etc/text_ellipsis/index.html) : width, line 지정
