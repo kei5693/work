@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+ <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+ <title> test </title>
+ <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  
+
+ <style>
+ 	.loop_box {position:relative}
+	.box {position:absolute;top:0;left:0;width:50px;height:50px;border-radius:50%;background:#000}
+	.num02 {left:60px}
+	.num03 {left:120px}
+ </style>
+</head>
+<body>
+
+<div id="wrap">
+	<div class="loop_box">
+		<div class="box"></div>
+		<div class="box num02"></div>
+		<div class="box num03"></div>
+	</div>
+</div>
+
+ <script type="text/javascript">
+ 	var i = 0,
+		interval = 0,
+		moveTime = 40,
+    moveValue = 20,
+		box = document.getElementsByClassName("box"),
+		boxSum = box.length;
+
+	function down(){
+	  interval = setInterval(function(){
+	    i++;
+	    for (j = 0; j < boxSum; j++){
+	      box[j].style.top = i+'px';
+	    }
+	    if (i >= moveValue){
+	      clearInterval(interval);
+	      up();
+	    }
+	  },moveTime);
+	}
+
+
+	function up(){
+	  interval = setInterval(function(){
+	    i--;
+	    for (j = 0; j < boxSum; j++){
+	      box[j].style.top = i+'px';
+	    }
+	    if (i == 1){
+	      clearInterval(interval);
+	      down();
+	    }
+	  },moveTime);
+	}
+
+	down();
+ </script>
+</body>
+</html>
