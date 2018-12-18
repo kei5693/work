@@ -14,8 +14,8 @@
 - [slide_02](https://kei5693.github.io/work/study/slide/slide_increase01/index.html) : 버튼, 슬라이드 확대
 - [slide_03](https://kei5693.github.io/work/study/slide/slide_increase02/index.html) : 버튼, 슬라이드 확대, 시작/정지
 
-### 이미지 갤러리
-- [img_gallery](https://kei5693.github.io/work/study/slide/img_gallery/index.html) : 네이버 이미지 갤러리 변형
+### 디자인 스크롤 플러그인
+- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스 이동
 
 ### 말줄임 플러그인
 - [text_ellipsis](https://kei5693.github.io/work/study/etc/text_ellipsis/index.html) : width, line 지정
@@ -24,11 +24,11 @@
 - [loop_01](https://kei5693.github.io/work/study/animate/animate_loop/index.html) : 제이쿼리
 - [loop_02](https://kei5693.github.io/work/study/animate/animate_loop/index02.html) : 자바스크립트
 
-### 디자인 스크롤 플러그인
-- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스 이동
+### 마우스 이벤트
+- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대
+
+### 이미지 갤러리
+- [img_gallery](https://kei5693.github.io/work/study/slide/img_gallery/index.html) : 네이버 이미지 갤러리 변형
 
 ### 스크롤 이벤트
 - [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : 스크롤에 맞춰서 제어
-
-### 마우스 이벤트
-- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대
