@@ -28,7 +28,7 @@
 - [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스 이동
 
 ### 스크롤 이벤트
-- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : aside를 스크롤에 맞춰서 제어
+- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : 스크롤에 맞춰서 제어
 
 ### 마우스 이벤트
-- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미자 확대
+- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대
