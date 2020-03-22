@@ -2245,7 +2245,11 @@ $(document).ready(function () {
 				}		
 		}
 		var $text_02 = document.getElementById('text_02');
-		$text_02.innerText = window.innerHeight;
+		function setText2() {
+		  $text_02.innerText = window.innerHeight;
+		}
+		setInterval(setText2, 10);
+		
 	});
 	
 	const $text_01 = document.getElementById('text_01');
