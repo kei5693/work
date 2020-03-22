@@ -194,7 +194,7 @@ function closeStoreLayer(){
 </form>
 
 <!-- wrap -->
-<div class="onload scrolling sr_mileage" id="wrapper" style="position: fixed;min-width: 320px;min-height: 100%;z-index: 1;top: 0;left: 0;height: 100vh;overflow-y:scroll;"><!-- 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT --><!-- sr_mileage 클래스 추가 -->
+<div class="onload scrolling sr_mileage" id="wrapper"><!-- 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT --><!-- sr_mileage 클래스 추가 -->
 
     <!-- header wrap -->
 	<header>            
@@ -2222,10 +2222,7 @@ $(document).ready(function () {
 					_calc01					= _floatingTop.offset().top - ($(window).height()/2),
 					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
-				
-				
-				
-				//console.log(_calc03 )
+				console.log(_scrollTop > _calc01 &&  _scrollTop < _calc02 )
 				
 				if( _scrollTop > (_floatingTop.offset().top - 55) ){
 					_floatingTop.find(".head_sec").addClass("on");
@@ -2233,14 +2230,11 @@ $(document).ready(function () {
 					_floatingTop.find(".head_sec").removeClass("on");
 				}
 
-
 				if( _scrollTop > _calc01 &&  _scrollTop < _calc02 ){
 					_staticButton.addClass("on");
 				} else {
 					_staticButton.removeClass("on");
 				}
-				
-
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
