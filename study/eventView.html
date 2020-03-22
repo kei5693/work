@@ -2204,12 +2204,9 @@ $(document).ready(function () {
 					_staticButton			= $(".sr_mileage .btn_area.static"),
 					_scrollTop				= $(this).scrollTop(),
 					_calc01					= _floatingTop.offset().top - ($(window).height()/2),
-					_calc02					= _floatingBottomBorder.offset().top - $(window).height();// + _staticButton.height();
+					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
 				
-				_calc03 = ($("#wrapper").height() + 55) - (_staticButton.height() + $(".guide_caution").height());
-				
-				//console.log(_calc03 )
 				
 				if( _scrollTop > (_floatingTop.offset().top - 55) ){
 					_floatingTop.find(".head_sec").addClass("on");
@@ -2278,6 +2275,7 @@ $(document).ready(function () {
 	window.addEventListener("load",function() {
     setTimeout(function(){
         // This hides the address bar:
+							alert("on")
         window.scrollTo(0, 1);
     }, 0);
 });
