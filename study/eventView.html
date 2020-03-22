@@ -2222,7 +2222,7 @@ $(document).ready(function () {
 					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
 				
-				_calc03 = ($("#wrapper").height() + 55) - (_staticButton.height() + $(".guide_caution").height());
+				_calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
 				
 				//console.log(_calc03 )
 				
@@ -2246,6 +2246,11 @@ $(document).ready(function () {
 				}		
 		}
 	});
+		const $text = document.getElementById('text');
+	function setText() {
+	  $text.innerText = window.innerHeight;
+	}
+	setInterval(setText, 100);
 
 
 	/* 이벤트 상세 알람 제거 */
@@ -2293,11 +2298,7 @@ $(document).ready(function () {
 	
 
 	
-	const $text = document.getElementById('text');
-	function setText() {
-	  $text.innerText = window.innerHeight;
-	}
-	setInterval(setText, 100);
+
 	/* // 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT(지점 선택)_01 */
 	
 });
