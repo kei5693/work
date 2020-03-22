@@ -194,7 +194,7 @@ function closeStoreLayer(){
 </form>
 
 <!-- wrap -->
-<div class="onload scrolling sr_mileage" id="wrapper" style="position: fixed;min-width: 320px;min-height: 100%;z-index: 1;top: 0;left: 0;height: 100vh;overflow-y:scroll;"><!-- 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT --><!-- sr_mileage 클래스 추가 -->
+<div class="onload scrolling sr_mileage" id="wrapper"><!-- 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT --><!-- sr_mileage 클래스 추가 -->
 
     <!-- header wrap -->
 	<header>            
@@ -1469,16 +1469,19 @@ function closeStoreLayer(){
 			</div>
 		</div>
 		
-		<div id="text">0</div>
+		<div class="text_box">
+			<div id="text_01">0</div>
+			<div id="text_02">1</div>
+		</div>
 		<style>
-			#text {
-position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    background: #000;
-    padding: 5px 10px;
-    color: #fff;
+			.text_box {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				z-index: 999;
+				background: #000;
+				padding: 5px 10px;
+				color: #fff;
 			}
 		</style>
 		
@@ -2212,37 +2215,27 @@ $(document).ready(function () {
 
 
 	/* 이벤트 상세 나의 구매내역 리스트 상단, 참여하기 하단 버튼 플로팅 */
-	$("#wrapper").on('scroll', function(){
+	$(window).on('scroll', function(){
 		var _eventBenefitOn = $(".sr_mileage .event_benefit").is(":visible");
 		if(_eventBenefitOn){
 				var _floatingTop			= $(".sr_mileage .event_benefit .tab_container .tab_cate .buy_list_cont"),
 					_floatingBottomBorder	= $(".sr_mileage .btn_area.get_benefit"),
 					_staticButton			= $(".sr_mileage .btn_area.static"),
 					_scrollTop				= $(this).scrollTop(),
-					_calc01					= _floatingTop.offset().top - ($(this).height()/2),
+					_calc01					= _floatingTop.offset().top - ($(window).height()/2),
 					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
-				
-				
-				
-				console.log(_scrollTop , $(".buy_list_cont").offset().top, _calc01, _calc02)
-				
-				if( $(".buy_list_cont").offset().top <= 55 ){
+				if( _scrollTop > (_floatingTop.offset().top - 55) ){
 					_floatingTop.find(".head_sec").addClass("on");
 				} else {
 					_floatingTop.find(".head_sec").removeClass("on");
 				}
 
-				
-					
-					
-				if( _scrollTop > _calc01 && _scrollTop < _calc02 ){
+				if( _scrollTop > _calc01 &&  _scrollTop < _calc02 ){
 					_staticButton.addClass("on");
 				} else {
 					_staticButton.removeClass("on");
 				}
-				
-				
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
@@ -2251,14 +2244,17 @@ $(document).ready(function () {
 					$("#benefitList .btn_top").fadeOut(200);
 				}		
 		}
+		var $text_02 = document.getElementById('text_02');
+		$text_02.innerText = window.innerHeight;
 	});
-	/*
-		const $text = document.getElementById('text');
+	
+	const $text_01 = document.getElementById('text_01');
 	function setText() {
-	  $text.innerText = window.innerHeight;
+	  $text_01.innerText = window.innerHeight;
 	}
 	setInterval(setText, 100);
-	*/
+	
+	
 
 
 	/* 이벤트 상세 알람 제거 */
