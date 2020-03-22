@@ -2235,13 +2235,13 @@ $(document).ready(function () {
 				function setFloating(){
 					var _calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
 					document.getElementById('text').innerText = window.innerHeight;
-					if( _scrollTop > _calc01 &&  _scrollTop < _calc03 ){
+					if( $(window).scrollTop() > _calc01 &&  $(window).scrollTop() < _calc03 ){
 						_staticButton.addClass("on");
 					} else {
 						_staticButton.removeClass("on");
 					}
 				}
-				setTimeout(setFloating, 100);
+				setInterval(setFloating, 100);
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
