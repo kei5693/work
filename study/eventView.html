@@ -2222,7 +2222,7 @@ $(document).ready(function () {
 					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
 				
-				_calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
+				
 				
 				//console.log(_calc03 )
 				
@@ -2232,11 +2232,15 @@ $(document).ready(function () {
 					_floatingTop.find(".head_sec").removeClass("on");
 				}
 
-				if( _scrollTop > _calc01 &&  _scrollTop < _calc03 ){
-					_staticButton.addClass("on");
-				} else {
-					_staticButton.removeClass("on");
+				function(){
+					var _calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
+					if( _scrollTop > _calc01 &&  _scrollTop < _calc03 ){
+						_staticButton.addClass("on");
+					} else {
+						_staticButton.removeClass("on");
+					}
 				}
+				setInterval(setFloating, 100);
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
