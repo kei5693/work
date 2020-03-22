@@ -2234,13 +2234,14 @@ $(document).ready(function () {
 
 				function setFloating(){
 					var _calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
+					document.getElementById('text').innerText = window.innerHeight;
 					if( _scrollTop > _calc01 &&  _scrollTop < _calc03 ){
 						_staticButton.addClass("on");
 					} else {
 						_staticButton.removeClass("on");
 					}
 				}
-				setInterval(setFloating, 100);
+				setTimeout(setFloating, 100);
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
@@ -2250,11 +2251,13 @@ $(document).ready(function () {
 				}		
 		}
 	});
+	/*
 		const $text = document.getElementById('text');
 	function setText() {
 	  $text.innerText = window.innerHeight;
 	}
 	setInterval(setText, 100);
+	*/
 
 
 	/* 이벤트 상세 알람 제거 */
