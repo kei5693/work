@@ -2232,7 +2232,7 @@ $(document).ready(function () {
 					_floatingTop.find(".head_sec").removeClass("on");
 				}
 
-				function(){
+				function setFloating(){
 					var _calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
 					if( _scrollTop > _calc01 &&  _scrollTop < _calc03 ){
 						_staticButton.addClass("on");
