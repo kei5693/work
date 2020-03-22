@@ -2275,7 +2275,12 @@ $(document).ready(function () {
 			$(window).scrollTop(_scroll);
 		}, 20);
 	});
-	
+	window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+});
 	/* // 2020-03-18 : 20200309_[S공통_이벤트]포인트통합PJT(지점 선택)_01 */
 });
 
