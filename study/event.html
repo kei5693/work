@@ -2212,37 +2212,37 @@ $(document).ready(function () {
 
 
 	/* 이벤트 상세 나의 구매내역 리스트 상단, 참여하기 하단 버튼 플로팅 */
-	$(window).on('scroll', function(){
+	$("#wrapper").on('scroll', function(){
 		var _eventBenefitOn = $(".sr_mileage .event_benefit").is(":visible");
 		if(_eventBenefitOn){
 				var _floatingTop			= $(".sr_mileage .event_benefit .tab_container .tab_cate .buy_list_cont"),
 					_floatingBottomBorder	= $(".sr_mileage .btn_area.get_benefit"),
 					_staticButton			= $(".sr_mileage .btn_area.static"),
 					_scrollTop				= $(this).scrollTop(),
-					_calc01					= _floatingTop.offset().top - ($(window).height()/2),
+					_calc01					= _floatingTop.offset().top - ($(this).height()/2),
 					_calc02					= _floatingBottomBorder.offset().top - $(window).height() + _staticButton.height();
 				
 				
 				
 				
-				//console.log(_calc03 )
+				console.log(_scrollTop , $(".buy_list_cont").offset().top, _calc01, _calc02)
 				
-				if( _scrollTop > (_floatingTop.offset().top - 55) ){
+				if( $(".buy_list_cont").offset().top <= 55 ){
 					_floatingTop.find(".head_sec").addClass("on");
 				} else {
 					_floatingTop.find(".head_sec").removeClass("on");
 				}
 
-				function setFloating(){
-					var _calc03 = _floatingBottomBorder.offset().top - window.innerHeight + _staticButton.height();
-					document.getElementById('text').innerText = window.innerHeight;
-					if( $(window).scrollTop() > _calc01 &&  $(window).scrollTop() < _calc03 ){
-						_staticButton.addClass("on");
-					} else {
-						_staticButton.removeClass("on");
-					}
+				
+					
+					
+				if( _scrollTop > _calc01 && _scrollTop < _calc02 ){
+					_staticButton.addClass("on");
+				} else {
+					_staticButton.removeClass("on");
 				}
-				setInterval(setFloating, 10);
+				
+				
 
 				/* 혜택 지급 내역 탑 버튼 on, off */
 				if(_scrollTop > 0) {
