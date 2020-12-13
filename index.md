@@ -31,4 +31,4 @@
 - [img_gallery](https://kei5693.github.io/work/study/slide/img_gallery/index.html) : 네이버 이미지 갤러리 변형
 
 ### 스크롤 이벤트
-- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : 스크롤에 맞춰서 제어
+- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : 스크롤에 맞춰서 제어...
