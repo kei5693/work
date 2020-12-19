@@ -1,6 +1,12 @@
 ## 오경훈 Porfolio
 
-퍼블리셔로 프로젝트와 스터디를 하면서 만들었던 스크립트를 정리해 놓은 페이지입니다.
+프로젝트와 스터디를 하면서 사용했던 내용을 정리했습니다.
+
+### Vue.js
+- [vue_test](https://kei5693.github.io/work/study/javascript/vue_test.html)
+
+### 자바스크립트 200제
+- [javascript_200](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
 
 ### 자바스크립트 기초
 - [class_01](https://kei5693.github.io/work/study/javascript/class_01.html) : 제이쿼리 이벤트 만들기
@@ -9,11 +15,8 @@
 - [class_04](https://kei5693.github.io/work/study/javascript/class_04.html) : 자바스크립트 기본 문법(함수, 배열)
 - [class_05](https://kei5693.github.io/work/study/javascript/media_queries.html) : 미디어쿼리
 
-### 자바스크립트 200제
-- [javascript_200](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
-
-### Vue.js
-- [vue_test](https://kei5693.github.io/work/study/javascript/vue_test.html)
+### 설문조사
+- [survey](https://kei5693.github.io/work/study/survey/survey_page.html)
 
 ### 슬라이드
 - [slide](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 마우스, 터치
