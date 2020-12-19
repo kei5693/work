@@ -7,36 +7,40 @@
 		scrollValue = 0,
 		setLimit = -(slideUl.width() * (slideList.length-1));
 		
-		//console.log(setLimit);
-		
 	slideList.each(function(i){
 		$(this).css("left" , i * slideUl.width());
 	});
 	
-	slide.on("mousedown" , function(e){
+	slide.on("mousedown touchstart" , function(e){
 		e.preventDefault();
 		
 		var startPos = moveLeft,
-			originPos = e.pageX;
-			
-			//console.log(startPos , originPos);
-			
-		$(document).on("mousemove" , function (e) {
-			scrollValue = e.pageX - originPos;
+			originPos = e.type != 'touchstart' ? e.pageX : e.originalEvent.touches[0].pageX;
+
+		$(document).on("mousemove touchmove" , function (e) {
+			var movePos = e.type != 'touchmove' ? e.pageX: e.originalEvent.touches[0].pageX;
+
+			scrollValue = movePos - originPos;
 			moveLeft = startPos + scrollValue;
 			moveIdx = Math.floor(moveLeft / -slideUl.width());
-			
-			//console.log(moveLeft , scrollValue);
-			
 			scrollEvent();
-		}).mouseup(function(){
-			$(document).off("mousemove");
-
-			console.log(moveLeft , scrollValue , moveIdx);
-			scrollAnimate();
-			
 		});
-	});	
+	}).on('mouseup touchend', function(e){
+		$(document).off("touchmove").off("mousemove");
+		scrollAnimate();
+	});
+
+	$(window).resize(function(){
+		/*
+		console.log( moveIdx );
+		setLimit = -(slideUl.width() * (slideList.length-1));
+		
+		slideList.each(function(i){
+			$(this).css("left" , i * slideUl.width());
+		});
+		slideUl.css("left" , -moveIdx * slideUl.width() );
+		*/
+	});
 	
 	
 	function chkMove(){
@@ -62,8 +66,6 @@
 		} else {
 			movePrev();
 		}
-		
-		
 	}
 	
 	function moveNext(){
@@ -88,10 +90,5 @@
 		slideUl.stop().animate({
 			"left" : moveLeft
 		});
-		
-		
 	}
-	
-	
-	
 });

@@ -1,6 +1,6 @@
 /* TYPE, COMMON */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button,input{margin:0;padding:0}
-body,h1,h2,h3,h4,h5,h6,input,textarea,select,option{color:#000; font-family:'돋움',dotum,helvetica,sans-serif; font-size:12px;line-height:1.4;}
+body,h1,h2,h3,h4,h5,h6,input,textarea,select,option{color:#000; font-family:'맑은고딕',Malgun Gothic,'돋움',dotum,helvetica,sans-serif;font-size:12px;line-height:1.4;}
 img,fieldset,iframe{border:0}
 ul, ol {list-style:none}
 img,a,input,select,button{vertical-align:top}

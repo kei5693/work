@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+  <title>test</title>
+</head>
+<body>
+
+<style>
+.event_box {position:relative;margin:0 auto;}
+.event_box img {display:block;width:100% !important;height:auto !important;}
+
+.event_box .move_e_box01 {position:relative;overflow:hidden;}
+.event_box .move_e_box01 .move_e {position:absolute;top:0;left:0;width:100%;height:100%;}
+.event_box .move_e_box01 .move_e > img {position: absolute;left: 0;top:0;}
+.event_box .move_e_box01 .move_e .el03,
+.event_box .move_e_box01 .move_e .el04 {width:auto !important;}
+
+.event_box .move_e_box01 .move_e .el01 {
+	animation : 1s infinite alternate ease-in-out ani_opacity;
+}
+.event_box .move_e_box01 .move_e .el02 {
+	animation : 1s infinite alternate-reverse ease-in-out ani_opacity;
+}
+
+.event_box .move_e_box01 .move_e .el03 {
+	width: 51.05% !important;
+    top: 66%;
+    transform: rotate(-1deg);
+    transform-origin: 97% 73.68%;
+    animation: 0.8s infinite alternate ease-in-out move_hand01;
+}
+.event_box .move_e_box01 .move_e .el04 {
+    width: 51.25% !important;
+    top: 64.7%;
+    left: auto;
+    right: -1%;
+    transform: rotate(-1deg);
+    transform-origin: 48.39% 91.76%;
+    animation: 0.8s infinite alternate ease-in-out move_hand01;
+    animation-delay: 0.4s;
+}
+.event_box .move_e_box01 .move_e .el05 {
+	animation : 1s infinite alternate linear ani_opacity;
+	animation-timing-function: steps(1);
+}
+
+
+@keyframes ani_opacity {
+	0%			{opacity:0;}
+	50%,100%	{opacity:1;}
+}
+@keyframes move_hand01 {
+	0%,10%		{transform: rotate(-1deg);}
+	90%,100%	{transform: rotate(1deg);}
+}
+@keyframes move_hand02 {
+	0%,10%		{transform: rotate(-1deg);}
+	90%,100%	{transform: rotate(5deg);}
+}
+
+
+
+.event_box .move_e_box02 {position:relative;overflow:hidden;}
+.event_box .move_e_box02 .move_e {position:absolute;top: 24%;left:0;width:100%;height:100%;}
+.event_box .move_e_box02 .move_e .car01.on {
+	animation : 1s 1 forwards cubic-bezier(0.25, 0.46, 0.45, 0.94) move_car01;
+}
+.event_box .move_e_box02 .move_e .car02 {margin:20% 0 0 -20%;transform-origin: 62.08% 10.31%;}
+.event_box .move_e_box02 .move_e .car02.on {
+	animation : 1s 1 forwards cubic-bezier(0.25, 0.46, 0.45, 0.94) move_car02;
+}
+.event_box .move_e_box02 .move_e .car03 {margin: -0 0 0 -36%;}
+.event_box .move_e_box02 .move_e .car03.on {
+	animation : 1s 1 forwards cubic-bezier(0.25, 0.46, 0.45, 0.94) move_car03;
+}
+
+@keyframes move_car01 {
+	0%		{transform: translateX(0px);}
+	100%	{transform: translateX(-14%););}
+}
+
+@keyframes move_car02 {
+	0%			{transform: rotate(0deg);margin-left:-20%;}
+	95%,100%	{transform: rotate(12.6deg);}
+	95%,100%	{margin-left:18%;}
+}
+
+@keyframes move_car03 {
+	0%		{transform: translateX(0px);}
+	100%	{transform: translateX(24%);}
+}
+
+@media all and (min-width:768px){
+    .event_box {width:768px;margin:0 auto;}
+}
+
+</style>
+
+<div class="event_box">
+	<!-- 상단 -->
+	<div class="move_e_box01">
+		<img src="https://www.shilladfs.com/comm/resources/event/15935801818357e1a0a26-c02b-47ff-a1d0-c9095f68693c.jpg" alt="" />
+		<div class="move_e">
+			<img class="el05" src="https://www.shilladfs.com/comm/resources/event/159358023141200a6b69f-6b0f-42da-832f-8ec55a23eaa6.png" alt="" />
+			
+			<img class="el01" src="https://www.shilladfs.com/comm/resources/event/1593581588072b2995041-02f0-4f92-abbc-e99a8df28631.png" alt="좌" />
+			<img class="el02" src="https://www.shilladfs.com/comm/resources/event/159358159936219b32364-0d97-44e4-9aef-5b89121479bd.png" alt="우" />
+			<img class="" src="https://www.shilladfs.com/comm/resources/event/15935815738530ef897eb-782f-4614-8fc4-e9e97c433220.png" alt="상단 조명" />
+			
+			<img class="el03" src="https://www.shilladfs.com/comm/resources/event/1593569484680f398285a-1d64-4126-bc6f-9ef58db88398.png" alt="왼쪽 사람 팔" />
+			<img class="el04" src="https://www.shilladfs.com/comm/resources/event/1593569500315e80d6c37-e0d0-4d91-a6bd-67a405726246.png" alt="오른쪽 사람 팔" />
+			
+			<img class="" src="https://www.shilladfs.com/comm/resources/event/15935816138515fd7af61-3bde-49a3-8830-f99e6a194e14.png" alt="전단지" />
+		</div>
+	</div>
+	
+	<!-- visual -->
+	<div class="visual">
+		<img src="https://www.shilladfs.com/comm/resources/event/159358019873027170e36-2c92-497d-971b-d0b7a09f38e9.jpg" alt="" />
+	</div>
+	
+	<!-- 하단 -->
+	<div class="move_e_box02">
+		<img src="https://www.shilladfs.com/comm/resources/event/1593580310310164b3fc0-927b-4947-a9c4-e00b62242ee8.jpg" alt="" />
+		<div class="move_e">
+			<img class="car01" src="https://www.shilladfs.com/comm/resources/event/1593580269245e6248a72-ac8e-4cbc-9303-f5963a1580b5.png" alt="" />
+			<img class="car02" src="https://www.shilladfs.com/comm/resources/event/15935802928792c6f27aa-50d6-43be-ba34-31b9b4ce20ff.png" alt="" />
+			<img class="car03" src="https://www.shilladfs.com/comm/resources/event/159358030241979f9b1d1-9fc0-40e0-9607-a56255504cc9.png" alt="" />
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	let _prevScrollTop = 0;
+	
+	window.addEventListener('scroll', function(e){
+		let _scrollTop = window.scrollY,
+			_nextScrollTop = window.pageYOffset || 0,
+			_target = document.querySelectorAll('.event_box .move_e_box02 .move_e img');
+		
+		if (_nextScrollTop > _prevScrollTop){
+			//console.log('down');
+			
+			_target.forEach(function(e){
+				var _calc01 = (window.pageYOffset + e.getBoundingClientRect().top) - ( window.innerHeight - e.clientHeight ),
+					_calc02 = _calc01 + e.clientHeight;
+				
+				if( _scrollTop > _calc01 && _scrollTop < _calc02 ){
+					if( !e.classList.contains('on') ){
+						e.classList.add('on');
+					}
+				}
+			});
+		} else if (_nextScrollTop < _prevScrollTop){
+			//console.log('up');
+			
+			_target.forEach(function(e){	
+				var _calc01 = (window.pageYOffset + e.getBoundingClientRect().top) - ( window.innerHeight + e.clientHeight ),
+					_calc02 = _calc01 + e.clientHeight;
+					
+				if( _scrollTop > _calc01 && _scrollTop < _calc02 ){
+					if( e.classList.contains('on') ){
+						e.classList.remove('on');
+					}
+				}
+			});
+		}
+		_prevScrollTop = _nextScrollTop;
+	});
+
+</script>
+
+
+</body>
+</html>

@@ -85,7 +85,7 @@
 	});
 	
 	// mouse enter
-	$view01.find(".wrap").mouseenter(function(){
+	$view01.find(".wrap").on('mouseenter', function(){
 		$view02.fadeIn();
 		$(".lens").show();
 	}).mouseleave(function(){

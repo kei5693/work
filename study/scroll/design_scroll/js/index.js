@@ -42,18 +42,22 @@
 	});
 	
 	// move bar
-	moveBar.on("mousedown" , function(e){
+	moveBar.on("mousedown touchstart" , function(e){
 		e.preventDefault();
 		var startPos = moveBarTop,
-			originPos = e.pageY;
-		$(document).on("mousemove" , function (e) {
-			scrollValue = e.pageY - originPos;
+			originPos = e.type != 'touchstart' ? e.pageY : e.originalEvent.touches[0].pageY;
+		$(document).on("mousemove touchmove" , function (e) {
+			var movePos = e.type != 'touchmove' ? e.pageY : e.originalEvent.touches[0].pageY;
+
+			scrollValue = movePos - originPos;
 			moveBarTop = startPos + scrollValue;
 			scrollEvent();
-		}).mouseup(function(){
-			$(document).off("mousemove");
 		});
 	});
+	$(document).on('touchend mouseup',function(){
+		$(document).off("touchmove").off("mousemove");
+	});
+
 	
 	// scroll bar click
 	$(".line").on("click" , function(e){

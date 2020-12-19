@@ -10,16 +10,13 @@
 - [class_05](https://kei5693.github.io/work/study/javascript/media_queries.html) : 미디어쿼리
 
 ### 슬라이드
-- [slide_01](https://kei5693.github.io/work/study/slide/prototype_slide/index.html) : 플러그인, 버튼, 페이징, 슬라이드 사이즈 대응
+- [slide_01](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 마우스, 터치
 
-### 디자인 스크롤 플러그인
-- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스 이동
+### 디자인 스크롤 박스
+- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스, 터치
 
-### 말줄임 플러그인
-- [text_ellipsis](https://kei5693.github.io/work/study/etc/text_ellipsis/index.html) : width, line 지정
+### 패럴렉스 스크롤
+- [scroll](https://kei5693.github.io/work/study/scroll/parallax_scroll/index.html) : 스크롤에 따른 애니메이션 동작
 
 ### 마우스 이벤트
-- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대
-
-### 스크롤 이벤트
-- [scroll](https://kei5693.github.io/work/study/scroll/scroll_stop/index.html) : 스크롤에 맞춰서 제어
+- [zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대(PC용)

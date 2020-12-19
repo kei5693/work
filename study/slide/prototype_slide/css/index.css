@@ -1,9 +1,8 @@
 @charset "utf-8";
 
 body {background:#e4e4e4;}
-#wrap {width:1024px;margin:0 auto;}
-.slide {position:relative;overflow:hidden;width:400px;margin:0 auto;}
-.slide.flick > ul > li > a img {}
+#wrap {width:400px;margin:0 auto;}
+.slide {position:relative;overflow:hidden;width:100%;margin:0 auto;}
 .slide > ul > li {position:absolute;top:0;left:0;width:100%;z-index:100;}
 .slide > ul > li > a {display:block;}
 .slide > ul > li > a img {width:100%;}
@@ -15,6 +14,9 @@ body {background:#e4e4e4;}
 .slide .dot_nav > a + a {margin-left:10px;}
 .slide .dot_nav > a.on {border:1px solid #000;background:red;}
 
+@media all and (max-width:400px){
+    #wrap {width:100%;}
+}
 
 
 
