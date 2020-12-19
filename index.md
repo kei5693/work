@@ -10,10 +10,10 @@
 - [class_05](https://kei5693.github.io/work/study/javascript/media_queries.html) : 미디어쿼리
 
 ### 자바스크립트 200제
-- [class_01](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
+- [javascript_200](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
 
 ### Vue.js
-- [class_01](https://kei5693.github.io/work/study/javascript/vue_test.html)
+- [vue_test](https://kei5693.github.io/work/study/javascript/vue_test.html)
 
 ### 슬라이드
 - [slide](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 마우스, 터치
