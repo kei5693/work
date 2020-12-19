@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+<title>test</title>
+<script src="../common/js/jquery-1.9.1.min.js"></script>
+
+<style type="text/css">
+@charset "UTF-8";
+
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,
+input,legend,li,ol,p,select,table,td,textarea,th, ul {margin:0;padding:0;}
+body,button,input,select,table,textarea {font-size:12px;font-family:Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;}
+button,input {border-radius:0;}
+fieldset,img {border:0;}
+ol,ul {list-style:none;}
+address,em {font-style:normal;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+iframe {overflow:hidden;margin:0;padding:0;border:0;}
+.blind {position:absolute;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;width:1px;height:1px;}
+
+* {box-sizing: border-box;}
+body {background: #050801;padding-bottom:100px;-webkit-tap-highlight-color:transparent;}
+body > div {font-family:consolas;color:#fff;margin-top:100px;}
+</style>
+
+</head>
+<body>
+
+	<div class="border_animation01">
+		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
+		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
+		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
+		<style>
+			.border_animation01  {text-align: center;}
+			.border_animation01 a {
+				position: relative;
+				display: inline-block;
+				padding: 25px 30px;
+				margin: 40px 0;
+				color: #03e9f4;
+				font-size: 24px;
+				text-decoration: none;
+				text-transform: uppercase;
+				overflow: hidden;
+				letter-spacing: 4px;
+				transition: 0.5s;
+				-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+			}
+			.border_animation01 a + a {margin-left:50px;}
+			.border_animation01 a:nth-child(1) {
+				filter: hue-rotate(290deg);
+			}
+			.border_animation01 a:nth-child(3) {
+				filter: hue-rotate(110deg);
+			}
+			.border_animation01 a:hover {
+				background: #03e9f4;
+				color: #050801;
+				box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+			}
+			.border_animation01 a span {
+				position: absolute;
+				display: block;
+			}
+			.border_animation01 a span:nth-child(1) {
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #03e9f4);
+				animation: animate01_01 3s linear infinite;
+			}
+			.border_animation01 a span:nth-child(2) {
+				top: -100%;
+				right: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(180deg, transparent, #03e9f4);
+				animation: animate01_02 3s linear infinite;
+				animation-delay: 0.75s;
+			}
+			.border_animation01 a span:nth-child(3) {
+				bottom: 0;
+				right: -100%;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(270deg, transparent, #03e9f4);
+				animation: animate01_03 3s linear infinite;
+				animation-delay: 1.5s;
+			}
+			.border_animation01 a span:nth-child(4) {
+				bottom: -100%;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(360deg, transparent, #03e9f4);
+				animation: animate01_04 3s linear infinite;
+				animation-delay: 2.25s;
+			}
+			@media all and (max-width:768px){
+				.border_animation01 a {display:block;width:80%; margin:0 auto 100px;}
+				.border_animation01 a + a {margin-left:auto;}
+			}
+
+			@keyframes animate01_01{
+				0%			{left: -100%;}
+				50%, 100%	{left: 100%;}
+			}
+			@keyframes animate01_02{
+				0%			{top: -100%;}
+				50%, 100%	{top: 100%;}
+			}
+			@keyframes animate01_03{
+				0%			{right: -100%;}
+				50%, 100%	{right: 100%;}
+			}
+			@keyframes animate01_04{
+				0%			{bottom: -100%;}
+				50%, 100%	{bottom: 100%;}
+			}
+		</style>
+	</div>
+		
+	<div class="border_animation02">
+		<div><span></span><span></span><span></span><span></span></div>
+		<style>
+			.border_animation02 > div {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				margin:0 auto;
+				overflow: hidden;
+				-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+			}
+			.border_animation02 > div:hover {
+				background: #03e9f4;
+				box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+			}
+			.border_animation02 > div span {
+				position: absolute;
+				display: block;
+			}
+			.border_animation02 > div span:nth-child(1) {
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(90deg, transparent, #03e9f4);
+				animation: animate02_01 2s linear infinite;
+			}
+			.border_animation02 span:nth-child(3) {
+				bottom: 0;
+				left: -100%;
+				width: 100%;
+				height: 2px;
+				background: linear-gradient(270deg, transparent, #03e9f4);
+				animation: animate02_03 2s linear infinite;
+			}
+			.border_animation02 span:nth-child(2) {
+				top: -100%;
+				right: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(180deg, transparent, #03e9f4);
+				animation: animate02_02 2s linear infinite;
+				animation-delay: 1s;
+			}
+			.border_animation02 span:nth-child(4) {
+				top: 100%;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(360deg, transparent, #03e9f4);
+				animation: animate02_04 2s linear infinite;
+				animation-delay: 1s;
+			}
+			@keyframes animate02_01{
+				0%		{left: -100%;}
+				100%	{left: 100%;}
+			}
+			@keyframes animate02_03{
+				0%		{left: 100%;}
+				100%	{left: -100%;}
+			}
+			@keyframes animate02_02{
+				0%		{top: -100%;}
+				100%	{top: 100%;}
+			}
+			@keyframes animate02_04{
+				0%		{top: 100%;}
+				100%	{top: -100%;}
+			}
+		</style>
+	</div>
+
+	<div class="button_animation01">
+		<a href="#">Click, MouseDown, Touch</a>
+		<style>
+			.button_animation01  {text-align: center;}
+			.button_animation01 a {
+				position:relative;
+				display:inline-block;
+				padding:12px 36px;
+				margin:10px;
+				color:#fff;
+				background:#333;
+				border-radius: 40px;
+				font-size:18px;
+				text-decoration:none;
+				letter-spacing:2px;
+				overflow:hidden;
+
+			}
+			.button_animation01 a span {
+				position:absolute;
+				background: #fff;
+				transform: translate(-50%, -50%);
+				pointer-events: none;
+				border-radius: 50%;
+				animation: button_animation01 0.75s linear 1;
+			}
+			@media all and (max-width:768px){
+				.button_animation01 a {display:block;width:80%; margin:0 auto;letter-spacing:-1px;}
+			}
+			@keyframes button_animation01{
+				0%		{width:0; opacity:0.4;}
+				100%	{width:200%; padding-bottom:200%; opacity:0;}
+
+			}
+		</style>	
+		<script type="text/javascript">
+			// remove() ie polyfill
+			(function (arr) {
+			  arr.forEach(function (item) {
+				if (item.hasOwnProperty('remove')) {
+				  return;
+				}
+				Object.defineProperty(item, 'remove', {
+				  configurable: true,
+				  enumerable: true,
+				  writable: true,
+				  value: function remove() {
+					if (this.parentNode !== null)
+					  this.parentNode.removeChild(this);
+				  }
+				});
+			  });
+			})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+		
+			const buttons = document.querySelectorAll('.button_animation01 a');
+			/*
+			//buttons.forEach(function(btn){
+			buttons.forEach(btn =>{		// ie x
+				btn.addEventListener('mouseenter', function(e){
+					createSpan(e);
+				});
+				
+				btn.addEventListener('click', function(e){
+					e.preventDefault();
+					createSpan(e);
+				});
+			*/
+				
+			for(var i = 0; i < buttons.length; i++){
+				buttons[i].addEventListener('mouseenter', function(e){
+					createSpan(e);
+				});
+				
+				buttons[i].addEventListener('click', function(e){
+					e.preventDefault();
+					createSpan(e);
+				});
+				
+				function createSpan(event){
+					let e = event,
+						x = e.clientX - e.target.offsetLeft,
+						y = e.clientY - e.target.offsetTop + window.scrollY,
+						ripples = document.createElement('span');
+						
+					ripples.style.left = x +"px";
+					ripples.style.top = y +"px";
+					
+					e.currentTarget.appendChild(ripples);		// this.appendChild(ripples);   this = window
+					
+					setTimeout( function(){
+						ripples.remove();
+					}, 1000);
+				}
+			}
+		</script>
+	</div>
+
+	<div class="progress_box">
+		<div>
+			<div class="percent">
+				<svg>
+					<circle cx="70" cy="70" r="70"></circle>
+					<circle cx="70" cy="70" r="70"></circle>
+				</svg>
+				<div class="number">
+					<h2>87<span>%</span></h2>
+				</div>
+			</div>
+			<h2 class="text">Progress(ie x)</h2>
+		</div>
+		<style>
+			.progress_box > div {
+				position:relative;
+				width:300px;
+				height:300px;
+				margin:0 auto;
+				padding: 50px;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				background:#fff;
+				color: #000;
+			}
+			.progress_box .percent{
+				position: relative;
+				width:150px;
+				height:150px;   
+			}
+			.progress_box .percent svg{
+				position: relative;
+				width:150px;
+				height:150px;
+			}
+			.progress_box .percent svg circle{
+				width:150px;
+				height:150px;
+				fill:none;
+				stroke-width:10;
+				stroke:#000;
+				transform: translate(5px, 5px);
+				stroke-dasharray:440;
+				stroke-dashoffset:440;
+				stroke-linecap:round;
+			}
+			.progress_box .percent svg circle:nth-child(1){
+				stroke-dashoffset:0;
+				stroke:#f3f3f3;
+			}
+			.progress_box .percent svg circle:nth-child(2){
+				stroke-dashoffset:calc(440 - (440  * 87) / 100);
+				stroke:#03a9f4;
+			}
+			.progress_box .percent .number{
+				position: absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				color:#999;
+			}
+			.progress_box .percent .number h2{font-size:48px;}
+			.progress_box .percent .number h2 span{font-size:24px;}
+			.progress_box .percent .text{
+				padding:10px 0 0;
+				color:#999;
+				font-weight:bold;
+				letter-spacing: 1px;
+			}
+		</style>
+	</div>
+	
+	<div class="loader">
+		<span style="--i:1">A</span>
+		<span style="--i:2">n</span>
+		<span style="--i:3">i</span>
+		<span style="--i:4">m</span>
+		<span style="--i:5">a</span>
+		<span style="--i:6">t</span>
+		<span style="--i:7">i</span>
+		<span style="--i:8">o</span>
+		<span style="--i:9">n</span>
+		<style>
+			.loader {
+				position:relative;
+				text-align: center;
+			}
+			.loader span {
+				display:inline-block;
+				position:relative;
+				color:#fff;
+				font-size:2em;
+				animation: loader 2s ease-in-out infinite;
+				animation-delay: calc(0.1s * var(--i));
+				animation-play-state: running;
+			}
+			.loader:hover span {animation-play-state: paused;}
+
+			@keyframes loader {
+				0%, 40%, 100% {transform: translateY(0);}
+				20% {transform: translateY(-40px);}
+			}
+		</style>
+	</div>
+
+	<div class="image_hover_effects">
+		<!-- 1 -->
+		<div class="box">
+			<div class="imgBx"><img src="https://www.shilladfs.com/comm/resources/event/14665780944396dafce65-6103-4e36-a566-13dca24b81bd.jpg" alt="" /></div>
+			<div class="contentBx">
+				<div>
+					<h2>Post Title</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		</div>
+		<style>
+			.image_hover_effects {
+				position:relative;
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:space-around;
+				transform-style: preserve-3d;
+			}
+			.image_hover_effects .box {
+				position:relative;
+				width:400px;
+				height:300px;
+				margin:20px 0;
+				perspective: 1000px;
+				overflow:hidden;
+				transform-style: preserve-3d;
+			}
+			.image_hover_effects .box .imgBx {
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				transform-origin: top;
+				transform-style: preserve-3d;
+				transition: 0.5s;
+				transition-delay: 0.2s;
+			}
+			.image_hover_effects .box .imgBx img {
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				object-fit: cover;
+			}
+			.image_hover_effects .box:hover .imgBx {
+				transform: rotateX(-90deg);
+				opacity:0;
+				transition-delay: 0s;
+			}
+			.image_hover_effects .box .contentBx {
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				padding:40px;
+				background:#333;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				transform-origin: bottom;
+				transform-style: preserve-3d;
+				transition: 0.5s;
+				transform: rotateX(90deg);
+				opacity:0;
+				color:#fff;
+			}
+			.image_hover_effects .box:hover .contentBx {
+				transform: rotateX(0deg);
+				opacity:1;
+				transition-delay: 0.2s;
+			}
+			@media all and (max-width:768px){
+				.image_hover_effects .box {width:80%;margin:0 auto;}
+			}
+		</style>
+	</div>
+
+	<div class="loader02">
+		<div>
+			<span style="--i:1"><em>L</em></span>
+			<span style="--i:2"><em>o</em></span>
+			<span style="--i:3"><em>a</em></span>
+			<span style="--i:4"><em>d</em></span>
+			<span style="--i:5"><em>i</em></span>
+			<span style="--i:6"><em>n</em></span>
+			<span style="--i:7"><em>g</em></span>
+			<span style="--i:8"><em>.</em></span>
+		</div>
+		<style>
+			.loader02 > div {
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				padding-bottom:60px;
+			}
+			.loader02 span {
+				width: 15px;
+				height: 10px;
+				background: #fff;
+				margin: 0 5px;
+				height: calc(10px * var(--i));
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				animation: loader02_01 1.6s linear infinite;
+				animation-delay: calc(0.2s * var(--i));
+				box-shadow: 0 0 10px #00b3ff,
+							0 0 20px #00b3ff,
+							0 0 40px #00b3ff,
+							0 0 80px #00b3ff,
+							0 0 120px #00b3ff,
+							0 0 200px #00b3ff,
+							0 0 300px #00b3ff,
+							0 0 400px #00b3ff;
+			}
+			.loader02 span em {
+				display:block;
+				color: #fff;
+				font-size: 40px;
+				font-weight: bold;
+				transform: translateY(60px);
+				color: #fff;
+				text-shadow: 0 0 10px #00b3ff,
+							0 0 20px #00b3ff,
+							0 0 40px #00b3ff,
+							0 0 80px #00b3ff,
+							0 0 120px #00b3ff,
+							0 0 200px #00b3ff,
+							0 0 300px #00b3ff,
+							0 0 400px #00b3ff;
+			}
+			@keyframes loader02_01 {
+				0%, 100% {
+					background: #fff;
+					filter: blur(1px);
+					box-shadow: 0 0 10px #00b3ff,
+								0 0 20px #00b3ff,
+								0 0 40px #00b3ff,
+								0 0 80px #00b3ff,
+								0 0 120px #00b3ff,
+								0 0 200px #00b3ff,
+								0 0 300px #00b3ff,
+								0 0 400px #00b3ff;
+				}
+				35%,65% {
+					background: #111;
+					filter: blur(0px);
+					box-shadow: none;
+				}
+			}
+		</style>
+	</div>
+
+	<div class="progress_bar">
+		<div>
+			<section>
+				<h2>Creative Scroll Progress Bar</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div id="progressBar"></div>
+				<div id="scrollPath"></div>
+			</section>
+		</div>
+		<style>
+			.progress_bar > div {
+				width:400px;
+				height:400px;
+				margin:0 auto;
+				overflow-y:scroll;
+			}
+			.progress_bar > div::-webkit-scrollbar {
+				width:0;
+			}
+			.progress_bar section {
+				position:relative;
+				padding:50px 30px;
+				background:#333;
+			}
+			.progress_bar section h2 {
+				font-size:2.5em;
+				color: #fff;
+			}
+			.progress_bar section p {
+				font-size:1.2em;
+				color: #fff;
+			}
+			.progress_bar #scrollPath {
+				position:absolute;
+				top:0;
+				right:0;
+				width:10px;
+				height:100%;
+				background:rgba(255,255,255,0.2);
+			}
+			.progress_bar #progressBar {
+				position:absolute;
+				top:0;
+				right:0;
+				z-index:99;
+				width:10px;
+				/*height:100%;*/
+				background:linear-gradient(to top, #008aff, #00ffe7);
+				animation: progress_bar 5s linear infinite;
+			}
+			@keyframes progress_bar{
+				0%,100% {filter: hue-rotate(0deg);}
+				50%		{filter: hue-rotate(360deg);}
+			}
+			.progress_bar #progressBar:before {
+				content:'';
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:linear-gradient(to top, #008aff, #00ffe7);
+				filter:blur(30px);
+			}
+			.progress_bar #progressBar:after {
+				content:'';
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:linear-gradient(to top, #008aff, #00ffe7);
+				filter:blur(10px);
+			}
+			@media all and (max-width:768px){
+				.progress_bar > div {width:100%;margin:0 auto;}
+			}
+		</style>
+		<script type="text/javascript">
+			let scrollBox = document.querySelector('.progress_bar > div');
+				
+			scrollBox.onscroll = function(){
+				let progressBar		= document.getElementById('progressBar'),
+					scrollInner		= document.querySelector('.progress_bar section'),
+					maxScrollValue	= scrollInner.offsetHeight - scrollBox.offsetHeight;	// 954 - 400 = 554
+					progressHeight	= ( scrollBox.scrollTop / maxScrollValue ) * 100;		// (200 / 554) * 100 = 36.1%
+					
+				progressBar.style.height = progressHeight + "%";
+				
+				// scrollHeight : 스크롤바 높이를 뺀 내용 전체의 높이
+				// clientHeight : 스크롤바 높이를 뺀 가시적인 높이
+				// offsetHeight : 스크롤바 높이를 포함한 가시적인 높이
+			}
+		</script>
+	</div>
+
+	<div class="position_sticky">
+		<div>
+			<h2>
+				<span style="--i:0">P</span>
+				<span style="--i:1">O</span>
+				<span style="--i:2">S</span>
+				<span style="--i:3">I</span>
+				<span style="--i:4">T</span>
+				<span style="--i:5">I</span>
+				<span style="--i:6">O</span>
+				<span style="--i:7">N</span>
+				<span style="--i:8">_</span>
+				<span style="--i:9">S</span>
+				<span style="--i:10">T</span>
+				<span style="--i:11">I</span>
+				<span style="--i:12">C</span>
+				<span style="--i:13">K</span>
+				<span style="--i:14">Y</span>
+			</h2>
+		</div>
+		<style>
+			.position_sticky h2 {
+				position:relative;
+				display:flex;
+				justify-content:center;
+				background:linear-gradient(0deg, #ff0076, #cc00ff, #ffae00, #1fae99, #afaff9);
+			}
+			.position_sticky h2 span {
+				position:sticky;
+				top:0;
+				line-height:100vh;
+				height:100vh;
+				color:#fff;
+				font-size:6em;
+				margin-top:calc( 100vh * var(--i) );
+			}
+			@media all and (max-width:768px){
+				.position_sticky h2 span {font-size:2em;}
+			}
+		</style>
+	</div>
+	
+	<div class="typing_text">
+		<div>
+			<ul>
+				<li><a href="#none" data-text="Home">Home</a></li>
+				<li><a href="#none" data-text="About">About</a></li>
+				<li><a href="#none" data-text="Services">Services</a></li>
+				<li><a href="#none" data-text="Typing Menu">Typing Menu</a></li>
+				<li><a href="#none" data-text="Our Team">Our Team</a></li>
+				<li><a href="#none" data-text="Contact Us">Contact Us</a></li>
+			</ul>
+		</div>
+		<style>
+			.typing_text > div  {
+				text-align: center;
+			}
+			.typing_text ul {
+				position:relative;
+				display:inline-block;
+				text-align: left;
+				background: blueviolet;
+			}
+			.typing_text ul li {
+				padding: 0 20px;
+				font-size:4em;
+				position: relative;
+			}
+			.typing_text ul li a {
+				position:relative;
+				color: rgba(255,255,255,0.1);
+				text-decoration:none;
+				font-weight:bold;
+				display: block;
+			}
+			.typing_text ul li a:before {
+				content:attr(data-text);
+				position:absolute;
+				top:0;
+				overflow:hidden;
+				width:0;
+				color:#1bfaad;
+				white-space:nowrap;
+			}
+			.typing_text ul li:hover a:before {
+				animation: text_li 1s steps(11) forwards;
+			}
+			@keyframes text_li {
+				0%		{width: 0;}
+				100%	{width: 100%;}
+			}
+		</style>
+	</div>
+	
+	<div class="hover_effect">
+		<div>
+			<ul>
+				<li data-text="Home"><a href="#none">Home</a></li>
+				<li data-text="About"><a href="#none">About</a></li>
+				<li data-text="Services"><a href="#none">Services</a></li>
+				<li data-text="Typing Menu"><a href="#none">Typing Menu</a></li>
+				<li data-text="Our Team"><a href="#none">Our Team</a></li>
+				<li data-text="Contact Us"><a href="#none">Contact Us</a></li>
+			</ul>
+		</div>
+		<style>
+			.hover_effect {
+				background:#0d0f1b;
+				text-align: center;
+			}
+			.hover_effect div {
+				display:inline-block;
+			}
+			.hover_effect div ul {
+				position:relative;
+				display:flex;
+				flex-direction:column;
+				text-align: left;
+			}
+			.hover_effect div ul li:before {
+				content:attr(data-text);
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform:translate(-50%,-50%);
+				color:#fff;
+				font-size:6em;
+				font-weight:bold;
+				pointer-events:none;
+				opacity:0;
+				letter-spacing:20px;
+				transition:0.5s;
+				white-space:nowrap;
+			}
+			.hover_effect div ul li:hover:before {
+				opacity:0.05;
+				letter-spacing:0px;
+			}
+			.hover_effect div ul li a {
+				position:relative;
+				z-index:1;
+				display:inline-block;
+				padding:6px 15px;
+				text-decoration:none;
+				background:#2196f3;
+				color:#fff;
+				text-transform:uppercase;
+				letter-spacing:2px;
+				overflow:hidden;
+				transition: 0.5s;
+			}
+			.hover_effect div ul:hover li a {
+				opacity:0;
+			}
+			.hover_effect div ul li a:before {
+				content:'';
+				position:absolute;
+				top:0;
+				left:-100px;
+				width:80px;
+				height:100%;
+				background:linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+				transform: skewX(35deg);
+				transition:0s;
+			}
+			.hover_effect div ul li a:hover {
+				transform: scale(1.4);
+				z-index:1000;
+				background:#ff3f81;
+				opacity:1;
+			}
+			.hover_effect div ul li a:hover:before {
+				left:calc(100% + 100px);
+				transition:0.5s;
+				transition-delay:0.2s;
+			}
+		 </style>
+	</div>
+
+	<div class="ripple_effect">
+		<div>
+			<div class="container">
+				<div class="box">
+					<span style="--i:1"></span>
+					<span style="--i:2"></span>
+					<span style="--i:3"></span>
+					<span style="--i:4"></span>
+					<span style="--i:5"></span>
+					<span style="--i:6"></span>
+					<span style="--i:7"></span>
+					<span style="--i:8"></span>
+					<span style="--i:9"></span>
+					<span style="--i:10"></span>
+				</div>
+				<div class="box">
+					<span style="--i:1"></span>
+					<span style="--i:2"></span>
+					<span style="--i:3"></span>
+					<span style="--i:4"></span>
+					<span style="--i:5"></span>
+					<span style="--i:6"></span>
+					<span style="--i:7"></span>
+					<span style="--i:8"></span>
+					<span style="--i:9"></span>
+					<span style="--i:10"></span>
+				</div>
+			</div>
+		</div>
+		<style>
+			.ripple_effect .container {
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.ripple_effect .container .box {
+				position:relative;
+				width:400px;
+				height:400px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+			.ripple_effect .container .box span {
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform:translate(-50%,-50%);
+				box-sizing:border-box;
+				border:2px solid #fff;
+				border-radius:50%;
+				animation: ripple_effect 5s linear infinite;
+				animation-delay:calc( -0.5s * var(--i) );
+			}
+			.ripple_effect .container .box:nth-child(2) span {
+				border:none;
+				background:rgba(0,255,0,0.25);
+			}
+			@keyframes ripple_effect {
+				0%		{width:0;height:0;}
+				100%	{width:400px;height:400px;opacity:0;}
+			}
+			@media all and (max-width:768px){
+				.ripple_effect .container {display:block;}
+				.ripple_effect .container .box {width:100%;}
+			}
+		</style>
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

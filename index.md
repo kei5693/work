@@ -18,6 +18,9 @@
 ### 설문조사
 - [survey](https://kei5693.github.io/work/study/survey/survey_page.html)
 
+### Css Animation Test
+- [css_test](https://kei5693.github.io/work/study/css_test/css_test.html)
+
 ### 슬라이드
 - [slide](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 마우스, 터치
 
