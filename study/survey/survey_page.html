@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
+<title>THE SHILLA duty free</title>
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<script src="../common/js/jquery-1.9.1.min.js"></script>
+<script src="./js/index.js"></script>
+</head>
+<body>
+
+<!-- wrap -->
+<div id="wrap">
+    <!-- container -->
+    <div id="container">
+		<div class="survey_cont">
+			<!-- 1.출국여부 : 예 → 2.출국횟수, 아니오 → 12.출국주기 -->
+			<div id="survey1" class="survey active">
+                <h2>고객님께서는 지난 2019년 1년간 출국을 하셨습니까?</h2>
+                <p>1.출국여부 : 예 → 2.출국횟수, 아니오 → 12.출국주기</p>
+				<ul class="radio_box">
+					<li>
+						<div>
+							<span><input type="radio" id="radio01_01" name="radio01" value="1" data-id="survey2"><label for="radio01_01">예</label></span>
+							<span><input type="radio" id="radio01_02" name="radio01" value="2" data-id="survey12"><label for="radio01_02">아니오</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //출국여부 -->
+
+            <!-- 2.출국횟수: 다음 → 3.구매횟수 -->
+			<div id="survey2" class="survey">
+				<h2>2019년에 출국을 하셨다면, 2019년 1년간 총 몇 회 출국 하셨습니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+							<span><input type="radio" id="radio02_01" name="radio02" value="1"><label for="radio02_01">1회</label></span>
+							<span><input type="radio" id="radio02_02" name="radio02" value="2"><label for="radio02_02">2회</label></span>
+							<span><input type="radio" id="radio02_03" name="radio02" value="3"><label for="radio02_03">3회</label></span>
+							<span><input type="radio" id="radio02_04" name="radio02" value="4"><label for="radio02_04">4회 이상</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //출국횟수 -->
+            
+            <!-- 3.구매횟수 : 
+                [#]  입력값이 0이 아닌 경우 → 4.면세점별 금액 입력
+                [#]  입력값이 0인 경우      → 15.면세점 이용 안 하는 이유
+                [#] , [@] 숫자만 입력 가능한 인풋 박스
+            -->
+			<div id="survey3" class="survey">
+                <h2>답변주신 2019년 출국 횟수 중, 출국 시 면세점에서 상품구매를 하셨던 출국은 몇 회 입니까?</h2>
+                <p>[#]  입력값이 0이 아닌 경우 → 4.면세점별 금액 입력<br>
+                    [#]  입력값이 0인 경우      → 15.면세점 이용 안 하는 이유<br>
+                    [#] , [@] 숫자만 입력 가능한 인풋 박스</p>
+                <div><p>2019년 출국 <input type="number" min="0" />회 중 <input type="number" min="1" /> 회 면세점 이용</p></div>
+			</div>
+            <!-- //구매횟수 -->
+            
+            <!-- 4.면세점별 금액 입력
+                다른 면세점을 선택한 경우   → 5.타면세 상품군
+                신라면세점만 선택한 경우    → 6.선호채널
+             -->
+             <div id="survey4" class="survey">
+                <h2>2019년 출국 시 이용하신 면세점을 모두 체크하시고 각 면세점의 1년간 구매 총 금액의 대략적인 합을 적어주세요.</h2>
+                <p>다른 면세점을 선택한 경우   → 5.타면세 상품군<br>
+                    신라면세점만 선택한 경우    → 6.선호채널</p>
+				<ul class="check_box multi">
+                    <li><h3><span>신라</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_01_01" name="check01_01" value="1"><label for="chk01_01_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_01_02" name="check01_01" value="2"><label for="chk01_01_02">공항</label></span>
+                            <span><input type="checkbox" id="chk01_01_03" name="check01_01" value="3"><label for="chk01_01_03">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                    <li><h3><span>롯데</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_02_01" name="check01_02" value="1"><label for="chk01_02_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_02_02" name="check01_02" value="2"><label for="chk01_02_02">공항</label></span>
+                            <span><input type="checkbox" id="chk01_02_03" name="check01_02" value="3"><label for="chk01_02_03">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                    <li><h3><span>신세계</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_03_01" name="check01_03" value="1"><label for="chk01_03_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_03_02" name="check01_03" value="2"><label for="chk01_03_02">공항</label></span>
+                            <span><input type="checkbox" id="chk01_03_03" name="check01_03" value="3"><label for="chk01_03_03">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                    <li><h3><span>현대백화점</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_04_01" name="check01_04" value="1"><label for="chk01_04_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_04_02" name="check01_04" value="2"><label for="chk01_04_02">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                    <li><h3><span>신라아이파크</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_05_01" name="check01_05" value="1"><label for="chk01_05_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_05_02" name="check01_05" value="2"><label for="chk01_05_02">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                    <li><h3><span>기타</span>면세점</h3>
+                        <div>
+                            <span><input type="checkbox" id="chk01_06_01" name="check01_06" value="1"><label for="chk01_06_01">시내</label></span>
+                            <span><input type="checkbox" id="chk01_06_02" name="check01_06" value="2"><label for="chk01_06_02">공항</label></span>
+                            <span><input type="checkbox" id="chk01_06_03" name="check01_06" value="3"><label for="chk01_06_03">인터넷</label></span>
+                        </div>
+                        <p>총 약 <input type="number" min="0" /> 만원</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- //면세점별 금액 입력 -->
+
+            <!-- 5.타면세 상품군 : 다음 → 6.선호 채널 -->
+            <div id="survey5" class="survey">
+                <h2>고객님께서 신라면세점이 아닌 다른 면세점에서 구매하신 상품군은 무엇입니까? (중복 선택 가능)</h2>
+				<ul class="check_box">
+                    <li>
+                        <div>
+                            <span><input type="checkbox" id="chk02_01" name="check02" value="1"><label for="chk02_01">국산 화장품</label></span>
+                            <span><input type="checkbox" id="chk02_02" name="check02" value="2"><label for="chk02_02">수입 화장품</label></span>
+                            <span><input type="checkbox" id="chk02_03" name="check02" value="3"><label for="chk02_03">시계/주얼리</label></span>
+                            <span><input type="checkbox" id="chk02_04" name="check02" value="4"><label for="chk02_04">선글라스/가방/패션악세서리</label></span>
+                            <span><input type="checkbox" id="chk02_05" name="check02" value="5"><label for="chk02_05">술/담배/식품</label></span>
+                        </div>                     
+                    </li>
+                </ul>
+			</div>
+            <!-- //타면세 상품군 -->
+
+            <!-- 6.선호 채널1 : 다음 → 7.면세점 선택 이유 -->
+			<div id="survey6" class="survey">
+				<h2>고객님께서 평소 가장 선호하시고 자주 구매하시는 면세점 채널은 무엇입니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+							<span><input type="radio" id="radio03_01" name="radio03" value="1"><label for="radio03_01">시내점</label></span>
+							<span><input type="radio" id="radio03_02" name="radio03" value="2"><label for="radio03_02">공항점</label></span>
+							<span><input type="radio" id="radio03_03" name="radio03" value="3"><label for="radio03_03">인터넷점</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //선호 채널1 -->
+
+            <!-- 7.면세점 선택 이유 : 다음 → 8.타면세점별 등급
+                [##] : 면세점별 금액 입력 화면에서 [@] 값이 가장 높았던 면세점명 자동 노출
+             -->
+             <div id="survey7" class="survey">
+                <h2>고객님께서는 <span class="max_value"></span>면세점에서의 구매를 가장 많이 하셨다고 답변 주셨습니다. <span class="max_value"></span>면세점에서의 구매를 가장 많이 하신 이유는 무엇입니까? (중복 선택 가능)</h2>
+                <p>[##] : 면세점별 금액 입력 화면에서 [@] 값이 가장 높았던 면세점명 자동 노출</p>
+				<ul class="check_box">
+                    <li>
+                        <div>
+                            <span><input type="checkbox" id="chk03_01" name="check03" value="1"><label for="chk03_01">타 면세점보다 다양한 단독상품 등 상품구성 </label></span>
+                            <span><input type="checkbox" id="chk03_02" name="check03" value="2"><label for="chk03_02">타 면세점 대비 높은 할인 혜택</label></span>
+                            <span><input type="checkbox" id="chk03_03" name="check03" value="3"><label for="chk03_03">타 면세점의 구매희망 상품 품절</label></span>
+                            <span><input type="checkbox" id="chk03_04" name="check03" value="4"><label for="chk03_04">카드 바우처, 여행사 쿠폰등 다양한 제휴 행사</label></span>
+                            <span><input type="checkbox" id="chk03_05" name="check03" value="5"><label for="chk03_05">회원 등급이 높아서</label></span>
+                            <span><input type="checkbox" id="chk03_06" name="check03" value="6"><label for="chk03_06">출국장과 가깝고 접근성이 좋아서</label></span>
+                            <span><input type="checkbox" id="chk03_07" name="check03" value="7"><label for="chk03_07">고객 서비스가 좋아서</label></span>
+                            <span><input type="checkbox" id="chk03_08" name="check03" value="8"><label for="chk03_08">지인의 추천으로</label></span>
+                            <span><input type="checkbox" id="chk03_09" name="check03" value="9"><label for="chk03_09">기타 사유 </label></span>
+                        </div>
+                    </li>
+                </ul>
+			</div>
+            <!-- //면세점 선택 이유 -->
+
+            <!-- 8.타 면세점별 등급 : 다음 → 9.면세점 선택 시 중요한 요소 -->
+            <div id="survey8" class="survey">
+				<h2>고객님의 타 면세점 회원등급은 무엇입니까?</h2>
+				<ul class="radio_box multi">
+					<li><h3>롯데면세점</h3>
+                        <div>
+							<span><input type="radio" id="radio04_01_01" name="radio04_01" value="1"><label for="radio04_01_01">블랙</label></span>
+							<span><input type="radio" id="radio04_01_02" name="radio04_01" value="2"><label for="radio04_01_02">골드</label></span>
+							<span><input type="radio" id="radio04_01_03" name="radio04_01" value="3"><label for="radio04_01_03">실버</label></span>
+							<span><input type="radio" id="radio04_01_04" name="radio04_01" value="4"><label for="radio04_01_04">비회원</label></span>
+						</div>
+                    </li>
+                    <li><h3>신세계면세점</h3>
+                        <div>
+							<span><input type="radio" id="radio04_02_01" name="radio04_02" value="1"><label for="radio04_02_01">블랙</label></span>
+							<span><input type="radio" id="radio04_02_02" name="radio04_02" value="2"><label for="radio04_02_02">골드</label></span>
+							<span><input type="radio" id="radio04_02_03" name="radio04_02" value="3"><label for="radio04_02_03">실버</label></span>
+							<span><input type="radio" id="radio04_02_04" name="radio04_02" value="4"><label for="radio04_02_04">비회원</label></span>
+						</div>
+                    </li>
+                    <li><h3>현대백화점면세점</h3>
+                        <div>
+							<span><input type="radio" id="radio04_03_01" name="radio04_03" value="1"><label for="radio04_03_01">블랙</label></span>
+							<span><input type="radio" id="radio04_03_02" name="radio04_03" value="2"><label for="radio04_03_02">골드</label></span>
+							<span><input type="radio" id="radio04_03_03" name="radio04_03" value="3"><label for="radio04_03_03">실버</label></span>
+							<span><input type="radio" id="radio04_03_04" name="radio04_03" value="4"><label for="radio04_03_04">비회원</label></span>
+						</div>
+                    </li>
+                    <li><h3>신라아이파크면세점</h3>
+                        <div>
+							<span><input type="radio" id="radio04_04_01" name="radio04_04" value="1"><label for="radio04_04_01">블랙</label></span>
+							<span><input type="radio" id="radio04_04_02" name="radio04_04" value="2"><label for="radio04_04_02">골드</label></span>
+							<span><input type="radio" id="radio04_04_03" name="radio04_04" value="3"><label for="radio04_04_03">실버</label></span>
+							<span><input type="radio" id="radio04_04_04" name="radio04_04" value="4"><label for="radio04_04_04">비회원</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //타 면세점별 등급 -->
+
+            <!-- 9.면세점 선택 시 중요한 요소 : 다음 → 10.신라 이용 계획 -->
+			<div id="survey9" class="survey">
+				<h2>고객님께서 면세점을 선택 하실때 가장 중요한 요소는 무엇입니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio05_01" name="radio05" value="1"><label for="radio05_01">브랜드 / 상품 구성</label></span>
+                            <span><input type="radio" id="radio05_02" name="radio05" value="2"><label for="radio05_02">할인, 증정 행사 등 매장 내 행사</label></span>
+                            <span><input type="radio" id="radio05_03" name="radio05" value="3"><label for="radio05_03">카드 바우처, 여행사 쿠폰등 제휴 행사</label></span>
+                            <span><input type="radio" id="radio05_04" name="radio05" value="4"><label for="radio05_04">멤버십 등급</label></span>
+                            <span><input type="radio" id="radio05_05" name="radio05" value="5"><label for="radio05_05">시내점 교통 / 출국 게이트와의 거리 등 접근성 </label></span>
+                            <span><input type="radio" id="radio05_06" name="radio05" value="6"><label for="radio05_06">고객 서비스의 품질</label></span>
+                            <span><input type="radio" id="radio05_07" name="radio05" value="7"><label for="radio05_07">지인의 추천</label></span>
+                            <span><input type="radio" id="radio05_08" name="radio05" value="8"><label for="radio05_08">기타 사항 </label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //면세점 선택 시 중요한 요소 -->
+
+            <!-- 10.신라 이용 계획
+                예      → 11.설문 종료
+                아니오  → 14.신라 이용 안 하는 이유
+            -->
+			<div id="survey10" class="survey">
+                <h2>추후 출국 하실 때, 신라면세점을 이용 하실 계획이 있으십니까?</h2>
+                <p>예      → 11.설문 종료<br>
+                    아니오  → 14.신라 이용 안 하는 이유</p>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio06_01" name="radio06" value="1" data-id="survey11"><label for="radio06_01">예</label></span>
+                            <span><input type="radio" id="radio06_02" name="radio06" value="2" data-id="survey14"><label for="radio06_02">아니오</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //신라 이용 계획 -->
+
+            <!-- 11.설문종료 -->
+			<div id="survey11" class="survey">
+                <p>감사합니다.</p>
+                <ul>
+                    <li>설문에 참여해주셔서 감사합니다.</li>
+                    <li>S.Rewards는 고객님의 계정으로<br>일괄 지급 될 예정입니다.</li>
+                    <li>앞으로도 신라면세점과 함께<br>즐거운 쇼핑이 되시기를 바랍니다.</li>
+                </ul>
+			</div>
+            <!-- //설문종료 -->
+
+            <!-- 12.출국 주기 : 다음 → 13.선호 채널2 -->
+			<div id="survey12" class="survey">
+				<h2>2019년에 출국을 하지 않으셨다면, 2019년 이전의 고객님의 평소 출국 주기는 어떻게 되십니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio07_01" name="radio07" value="1"><label for="radio07_01">1 ~ 6개월</label></span>
+                            <span><input type="radio" id="radio07_02" name="radio07" value="2"><label for="radio07_02">6 ~ 12개월</label></span>
+                            <span><input type="radio" id="radio07_03" name="radio07" value="3"><label for="radio07_03">1 ~ 2년</label></span>
+                            <span><input type="radio" id="radio07_04" name="radio07" value="4"><label for="radio07_04">2년 이상</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //출국 주기 -->
+
+            <!-- 13.선호 채널2 : 다음 → 8.타 면세점별 등급 -->
+			<div id="survey13" class="survey">
+				<h2>고객님께서 평소 가장 선호하시고 자주 구매하시는 면세점 채널은 무엇입니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio08_01" name="radio08" value="1"><label for="radio08_01">시내점</label></span>
+                            <span><input type="radio" id="radio08_02" name="radio08" value="1"><label for="radio08_02">공항점</label></span>
+                            <span><input type="radio" id="radio08_03" name="radio08" value="1"><label for="radio08_03">인터넷점</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //선호 채널2 -->
+
+            <!-- 14.신라 이용 안 하는 이유 : 다음 → 11.설문종료 -->
+			<div id="survey14" class="survey">
+				<h2>추후 당사를 이용하실 계획이 없으시다면, 이유는 무엇입니까?</h2>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio09_01" name="radio09" value="1"><label for="radio09_01">타 면세점 대비 부족한 브랜드/상품구성</label></span>
+                            <span><input type="radio" id="radio09_02" name="radio09" value="2"><label for="radio09_02">타 면세점 대비 적은 할인 혜택</label></span>
+                            <span><input type="radio" id="radio09_03" name="radio09" value="3"><label for="radio09_03">잦은 상품 품절로 인하여 구매 불가</label></span>
+                            <span><input type="radio" id="radio09_04" name="radio09" value="4"><label for="radio09_04">카드/쿠폰 등 제휴행사의 부족</label></span>
+                            <span><input type="radio" id="radio09_05" name="radio09" value="5"><label for="radio09_05">타 면세점의 회원 등급이 높아서</label></span>
+                            <span><input type="radio" id="radio09_06" name="radio09" value="6"><label for="radio09_06">접근성이 좋지 않아서</label></span>
+                            <span><input type="radio" id="radio09_07" name="radio09" value="7"><label for="radio09_07">고객 서비스가 좋지 않아서</label></span>
+                            <span><input type="radio" id="radio09_08" name="radio09" value="8"><label for="radio09_08">기타 사유</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //신라 이용 안 하는 이유 -->
+
+            <!-- 15.면세점 이용 안 하는 이유
+                여행 동반자의 면세점 이용으로 직접 구매 불필요 선택한 경우, 다음                → 16.동반자 이용 면세점
+                [여행 동반자의 면세점 이용으로 직접 구매 불필요]이외의 항목을 선택한 경우, 다음  → 13.선호 채널2
+            -->
+			<div id="survey15" class="survey">
+                <h2>출국 시 면세점을 이용하지 않으셨다면, 면세점을 이용하지 않은 이유는 무엇입니까?</h2>
+                <p>여행 동반자의 면세점 이용으로 직접 구매 불필요 선택한 경우, 다음                → 16.동반자 이용 면세점<br>
+                    [여행 동반자의 면세점 이용으로 직접 구매 불필요]이외의 항목을 선택한 경우, 다음  → 13.선호 채널2</p>
+				<ul class="radio_box">
+					<li>
+                        <div>
+                            <span><input type="radio" id="radio10_01" name="radio10" value="1"><label for="radio10_01">구매 희망상품이 없음 (미입점, 품절)</label></span>
+                            <span><input type="radio" id="radio10_02" name="radio10" value="2"><label for="radio10_02">여행 중 상품을 휴대 하는 것이 부담됨</label></span>
+                            <span><input type="radio" id="radio10_03" name="radio10" value="3"><label for="radio10_03">입국장면세점/현지구매 등 다른 구매채널 이용</label></span>
+                            <span><input type="radio" id="radio10_04" name="radio10" value="4"><label for="radio10_04">여행 동반자의 면세점 이용으로 직접 구매 불필요</label></span>
+                            <span><input type="radio" id="radio10_05" name="radio10" value="5"><label for="radio10_05">기타 사유</label></span>
+						</div>
+					</li>
+                </ul>
+			</div>
+            <!-- //면세점 이용 안 하는 이유 -->
+
+            <!-- 16.동반자 이용 면세점 : 다음 → 13.선호 채널2 -->
+			<div id="survey16" class="survey">
+				<h2>혹시, 여행 동반자께서 이용하신 면세점이 기억 나신다면, 어느 면세점에서 구매 하셨습니까? (중복 체크 가능)</h2>
+				<ul class="check_box">
+                    <li>
+                        <div>
+                            <span><input type="checkbox" id="chk04_01" name="check04" value="1"><label for="chk04_01">신라면세점</label></span>
+                            <span><input type="checkbox" id="chk04_02" name="check04" value="2"><label for="chk04_02">롯데면세점</label></span>
+                            <span><input type="checkbox" id="chk04_03" name="check04" value="3"><label for="chk04_03">신세계면세점</label></span>
+                            <span><input type="checkbox" id="chk04_04" name="check04" value="4"><label for="chk04_04">현대백화점면세점</label></span>
+                            <span><input type="checkbox" id="chk04_05" name="check04" value="5"><label for="chk04_05">신라아이파크면세점</label></span>
+                            <span><input type="checkbox" id="chk04_06" name="check04" value="6"><label for="chk04_06">기타 면세점</label></span>
+                            <span><input type="checkbox" id="chk04_07" name="check04" value="7"><label for="chk04_07">기억 나지 않음 </label></span>
+                        </div>
+                    </li>
+                </ul>
+			</div>
+            <!-- //면세점 선택 이유 -->
+		</div>
+    </div>
+    <!-- //container -->
+	<!-- footer -->
+	<div id="footer">
+		<button type="button">다음</button>
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+</body>
+</html>

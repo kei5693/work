@@ -1,0 +1,107 @@
+@charset "UTF-8";
+body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,
+input,legend,li,ol,p,select,table,td,textarea,th, ul {margin:0;padding:0;}
+body,button,input,select,table,textarea {font-size:12px;font-family:"Malgun Gothic", "Dotum", '돋움', "Helvetica", "Apple SD Gothic Neo", sans-serif;}
+button,input {border-radius:0;}
+fieldset,img {border:0;}
+ol,ul {list-style:none;}
+address,em {font-style:normal;}
+a {text-decoration:none;}
+a:hover {text-decoration:underline;}
+iframe {overflow:hidden;margin:0;padding:0;border:0;}
+.blind {position:absolute;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;width:1px;height:1px;}
+
+/* 라디오박스 */
+.radio_box {font-size: 17px;}
+.radio_box > li h3 {font-size:12px;color:#333;}
+.radio_box > li > div {display: flex;flex-wrap: wrap;}
+.radio_box > li > div > span {min-height: 25px;width: 100%;}
+.radio_box > li > div > span + span {margin-top:20px;}
+.radio_box > li > div > span input {display:none;}
+.radio_box > li > div > span label {position:relative;padding-left: 30px;min-height: 25px;display:block;line-height: 24px;}
+.radio_box > li > div > span label:before,
+.radio_box > li > div > span label:after {content:'';position:absolute;top:0;left:0;width: 25px;height: 25px;border-radius: 50%;box-sizing: border-box;}
+.radio_box > li > div > span label:before {border: 1px solid #888;}
+.radio_box > li > div > span label:after {width: 25px;height: 25px;}
+.radio_box > li > div > span input[type='radio']:checked + label:before {border-color:#ef3f3b;}
+.radio_box > li > div > span input[type='radio']:checked + label:after {z-index:999;background:url('../images/bg_radio.png') no-repeat;background-size:cover;}
+/*라디오박스 비활성화*/
+.radio_depth .radio_box > li.on > * {opacity: 0.5;}
+
+.radio_box.multi > li {padding-bottom:30px;border-bottom:1px solid #ccc;}
+.radio_box.multi > li + li {margin-top:30px}
+.radio_box.multi > li > div {margin-top:0;}
+.radio_box.multi > li > div > span {min-height: 25px;width: 33.3%;margin-top: 20px;}
+.radio_box.multi > li > div > span + span {margin-top: 20px;}
+.radio_box.multi > li > p {position:relative;padding-left: 10px;margin-top: 14px;}
+.radio_box.multi > li > p:after {content:'';position:absolute;top: 8px;left:0;border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 5px solid #666;}
+
+
+/*체크박스*/
+.check_box {font-size: 17px;}
+.check_box > li {position:relative;}
+.check_box > li > div {display: flex;flex-wrap: wrap;margin-top: 20px;}
+.check_box > li > div > span {min-height: 25px;width: 100%;}
+.check_box > li > div > span + span {margin-top:20px;}
+.check_box > li > div > span input[type=checkbox] {display:none;}
+.check_box > li > div > span input[type=checkbox]:checked + label:after {background-color: #ef3d3d}
+.check_box > li > div > span input,
+.check_box > li > div > span label {vertical-align:middle;}
+.check_box > li > div > span label {position:relative;padding-left: 30px;color: #333;line-height: 25px;vertical-align:top;display: block;min-height: 25px;}
+.check_box > li > div > span input + label:after{content: '';position:absolute;top: 0;left: 0;font-size: 12px;box-sizing: border-box;width: 25px;height: 25px;color:#fff;background: #ccc url('../images/bg_chkbox.png') no-repeat;background-size:cover;border-radius: 50%;}
+
+.check_box.multi > li {padding-bottom:30px;border-bottom:1px solid #ccc;}
+.check_box.multi > li + li {margin-top:30px}
+.check_box.multi > li > div {margin-top:0;}
+.check_box.multi > li > div > span {min-height: 25px;width: 33.3%;margin-top: 20px;}
+.check_box.multi > li > p {position:relative;padding-left: 10px;margin-top: 14px;}
+.check_box.multi > li > p:after {content:'';position:absolute;top: 8px;left:0;border-top: 5px solid transparent;border-bottom: 5px solid transparent;border-left: 5px solid #666;}
+
+
+/*layout*/
+html, body {height:100%;}
+
+#wrap button:focus,
+#wrap input:focus,
+#wrap a:focus {outline: none;}
+#wrap input[type='number']::-webkit-outer-spin-button,
+#wrap input[type='number']::-webkit-inner-spin-button {appearance: none;}
+
+#header {display:none;}
+#header img {width:100%;display: block;}
+
+#container {padding: 50px 20px 60px;}
+#container .survey_cont > div {font-size:17px;display:none;padding-bottom:60px;}
+#container .survey_cont > div.active {display:block;}
+#container .survey_cont h2 {font-size:20px;margin-bottom:10px;}
+#container .survey_cont h2 + p {font-size:12px;margin-bottom:10px;}
+#container .survey_cont h3 {font-size: 18px;color: #333;}
+#container .survey_cont input[type='number']{border:0 none;border-bottom: 1px solid #999;display: inline-block;width: 70px;text-align: center;box-sizing: border-box;font-size: inherit;padding-bottom: 2px;color: #999;}
+#container .survey_cont > div > p input[type='number']{width: 36px;}
+
+#footer {position: fixed;bottom:0;left:0;width:100%;}
+#footer button,
+#footer a {display: block;width:100%;height:60px;line-height: 60px;border:0 none;background: red;color:#fff;text-align: center;font-weight: bold; font-size:20px;text-decoration: none;}
+#footer button {background: #666;}
+
+/* intro */
+.survey_intro #header {display:block;}
+.survey_intro #container {height:auto;padding:40px 20px 120px;}
+.survey_intro #container > h2 {font-size: 19px;color: #393939;text-align: center;}
+.survey_intro #container > ul {font-size: 17px;color: #666;text-align: center;margin-top: 26px;}
+.survey_intro #container > ul > li + li {margin-top: 28px;}
+.survey_intro #container > div {margin-top: 42px;padding-top: 28px;border-top:1px solid #ccc;}
+.survey_intro #container > div > p {padding-left:20px;font-size:15px;font-weight:bold;color:#333;position: relative;}
+.survey_intro #container > div > p:after {content:'';position:absolute;top: 2px;left:0;width: 16px;height: 16px;background:url('../images/bg_bull.jpg') no-repeat;background-size: 100% 100%;}
+.survey_intro #container > div > ul {font-size:13px;color:#666;margin-top: 15px;}
+.survey_intro #container > div > ul > li {position:relative;padding-left:10px;margin-top: 5px;}
+.survey_intro #container > div > ul > li:after {content:'';position:absolute;top: 7px;left:0;width: 3px;height:3px;background:#888;border-radius:50%;}
+
+/* result */
+#container #survey11 {margin-top:-6px;padding-bottom: 0;text-align:center;}
+#container #survey11 > p {font-size: 25px;font-weight: bold;color: #d17882;}
+#container #survey11 > ul {margin-top:28px;font-size:17px;color:#828282;}
+#container #survey11 > ul > li + li {margin-top:27px;}
+
+.result #header,
+.result #container .survey_cont > div {display:block;}
