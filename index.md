@@ -3,7 +3,7 @@
 프로젝트와 스터디를 하면서 사용했던 내용을 정리했습니다.
 
 ### Vue.js
-- [vue_test](https://kei5693.github.io/work/study/javascript/vue_test.html)
+- [vue_test](https://kei5693.github.io/work/study/vue/vue_test.html)
 
 ### 자바스크립트 200제
 - [javascript_200](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)

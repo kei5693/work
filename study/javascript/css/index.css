@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#wrap {width:1024px;margin:50px auto;}
+#wrap {margin:50px auto;}
 #wrap > div + div {margin-top:50px;}
 #wrap > div h1 {font-size:24px;margin-bottom:20px;}
 #wrap > div h2 {font-size:16px;margin-bottom:10px;}
@@ -14,8 +14,8 @@
 .class_01 .ex06 .mouse {height:100px;background:#ccc;}
 .class_01 .ex06 .mouse p {margin-top:10px;font-size:20px;font-weight:bold;color:red;}
 .class_01 .ex06 .wheel {height:100px;background:#888;}
-.class_01 .ex07 .scroll01 > div {height:100px;width:500px;overflow:scroll;}
-.class_01 .ex07 .scroll01 > div > div {height:500px;width:1000px;background:#888;}
+.class_01 .ex07 .scroll01 > div {height:200px;width:500px;overflow:scroll;}
+.class_01 .ex07 .scroll01 > div > div {height:600px;width:100%;background:blue;}
 .class_01 .ex07 .scroll02 > div {height:200px;overflow:scroll;}
 .class_01 .ex07 .scroll02 > div > div {height:1000px;background:#ccc;}
 .class_01 .ex07 .callback span {display:inline-block;width:200px;height:50px;line-height:50px;font-weight:bold;}
@@ -24,13 +24,26 @@
 
 
 @media all and (min-width:320px){
-body.media{background:#e65d5d;}
+    body.media{background:#e65d5d;}
 }
 
 @media all and (min-width:768px){
-body.media{background:#2dcc70;}
+    body.media{background:#2dcc70;}
+}
+
+@media (max-width:768px) {
+    #wrap {margin:10vw 4vw;}
+    .syntaxhighlighter {max-height:92vw; overflow-y:scroll;}
+    .syntaxhighlighter table td.gutter .line {padding: 0 5px !important;}
+    .syntaxhighlighter .line {line-height: 24px !important;padding: 0 10px !important;}
+    .class_01 .ex07 .scroll01 > div {width:100%;}
 }
 
 @media all and (min-width:1024px){
-body.media{background:#6fc0d1;}
+    body.media{background:#6fc0d1;}
+    #wrap {width:1024px;margin:50px auto;}
+    .syntaxhighlighter {max-height:25vw; overflow-y:scroll;}
+    .syntaxhighlighter .line {line-height: 18px !important;}
 }
+
+
