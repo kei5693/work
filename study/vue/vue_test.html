@@ -165,34 +165,34 @@
         </div>
         <style>
             #app01_03 .box {
-              width:150px;
-              height:150px;
-              background:royalblue;
-              border-radius:10px;
-              cursor:pointer;
-              transition:1s;
-              color:white;
-              display:flex;
-              justify-content:center;
-              align-items:center;
+                width:150px;
+                height:150px;
+                background:royalblue;
+                border-radius:10px;
+                cursor:pointer;
+                transition:1s;
+                color:white;
+                display:flex;
+                justify-content:center;
+                align-items:center;
             }
             #app01_03 .box.active {
-              width:300px;
-              background:tomato;
+                width:300px;
+                background:tomato;
             }
         </style>
         <script>
             const vm01_03 = new Vue({
-              el:'#app01_03',
-              data:{
-                toggle:false,
-                message:''
-              },
-              methods:{
-                toggleElement() {
-                  this.toggle = !this.toggle
+                el:'#app01_03',
+                data:{
+                    toggle:false,
+                    message:''
+                },
+                methods:{
+                    toggleElement() {
+                    this.toggle = !this.toggle
+                    }
                 }
-              }
             })
         </script>
         <script type="syntaxhighlighter" class="brush: js;">
@@ -208,15 +208,15 @@
                 const vm01_03 = new Vue({
                     el:'#app01_03',
                     data:{
-                      toggle:false,
-                      message:''
+                        toggle:false,
+                        message:''
                     },
                     methods:{
-                      toggleElement() {
-                        this.toggle = !this.toggle
-                      }
+                        toggleElement() {
+                            this.toggle = !this.toggle
+                        }
                     }
-                  })
+                })
             ]]>
         </script>
     </div>
@@ -229,19 +229,19 @@
                 <li v-for="todo in todos"
                     v-bind:key="todo.id">
                     <input type="checkbox" 
-                           v-model="todo.done" />
+                        v-model="todo.done" />
                     <span v-bind:class="{ done: todo.done }">{{ todo.title }}</span>
                 </li>
                 -->
                 <my-todo-item v-for="todo in todos"
-                              v-bind:key="todo.id"
-                              v-bind:todo="todo">
+                            v-bind:key="todo.id"
+                            v-bind:todo="todo">
                 </my-todo-item>
             </ul>
             <ul>
                 <my-todo-item v-for="todo in todos2"
-                              v-bind:key="todo.id"
-                              v-bind:todo="todo">
+                            v-bind:key="todo.id"
+                            v-bind:todo="todo">
                 </my-todo-item>
             </ul>
         </div>
@@ -550,12 +550,12 @@
             <br>
             
             <div v-bind:class="className"
-                 v-on:click="changeClassName">
+                v-on:click="changeClassName">
                 {{ msg2 }}
             </div>
             <!-- v-bind, v-on 약어 -->
             <div :class="className"
-                 @click="changeClassName">
+                @click="changeClassName">
                 {{ msg2 }}
             </div>  
         </div>
@@ -625,9 +625,9 @@
         <div id="app02_05">
             <div class="todos">
                 <div v-for="todo in computedTodos"
-                     :key="todo.id">
+                    :key="todo.id">
                     <input type="checkbox"
-                           v-model="todo.done" />
+                            v-model="todo.done" />
                     <span>{{ todo.title }}</span>
                 </div>
             </div>
@@ -646,19 +646,19 @@
                 computed:{
                     computedTodos(){
                     // 반복문 사용 시 서버에서 받아 온 data에 id 값이 없는 경우처럼 data를 가공 할 경우
-                       return this.todos.map( (todo, index) => {
-                           /*
-                           return Object.assign({}, todo, {
-                               id: index + 1,
-                               done: false
-                           })
+                        return this.todos.map( (todo, index) => {
+                            /*
+                            return Object.assign({}, todo, {
+                                id: index + 1,
+                                done: false
+                            })
                            */
-                           return {
+                            return {
                                ...todo, // es6 spread
-                               id: index + 1,
-                               done: false
-                           }
-                       })
+                                id: index + 1,
+                                done: false
+                            }
+                        })
                     }
                 }
                 // vm02_05.todos의 값은 변경되지 않고 vm02_05.computedTodos의 값은 재가공 되었다.
@@ -692,19 +692,19 @@
                     computed:{
                         computedTodos(){
                         // 반복문 사용 시 서버에서 받아 온 data에 id 값이 없는 경우처럼 data를 가공 할 경우
-                           return this.todos.map( (todo, index) => {
-                               /*
-                               return Object.assign({}, todo, {
-                                   id: index + 1,
-                                   done: false
-                               })
+                            return this.todos.map( (todo, index) => {
+                                /*
+                                return Object.assign({}, todo, {
+                                    id: index + 1,
+                                    done: false
+                                })
                                */
-                               return {
+                                return {
                                    ...todo, // es6 spread
-                                   id: index + 1,
-                                   done: false
-                               }
-                           })
+                                    id: index + 1,
+                                    done: false
+                                }
+                            })
                         }
                     }
                     // vm02_05.todos의 값은 변경되지 않고 vm02_05.computedTodos의 값은 재가공 되었다.
@@ -855,7 +855,7 @@
                     reversedMsg:{
                         // return this.msg.split('').reverse().join('')
                         get(){
-                          return this.msg.split('').reverse().join('')  
+                            return this.msg.split('').reverse().join('')  
                         },
                         set(v){
                             this.msg = v
@@ -893,7 +893,7 @@
                         reversedMsg:{
                             // return this.msg.split('').reverse().join('')
                             get(){
-                              return this.msg.split('').reverse().join('')  
+                                return this.msg.split('').reverse().join('')  
                             },
                             set(v){
                                 this.msg = v
@@ -1129,12 +1129,12 @@
         <!-- 형제요소인 경우에 사용 -->
         <div id="app02_11">
             <div v-if="colorState === 'red'" 
-                 class="box box-red"></div>
+                class="box box-red"></div>
             <div v-else-if="colorState === 'blue'"
-                 class="box box-blue"
-                 ></div>
+                class="box box-blue"
+                ></div>
             <div v-else
-                 class="box box-gray"></div>
+                class="box box-gray"></div>
         </div>
         <style>
             #app02_11 .box {width:100px;height:100px;}
@@ -1176,15 +1176,15 @@
     <h2>12.조건부 렌더링 - v-show</h2>
     <div>
         <!-- v-if : html tag를 생성, 제거
-             v-show : css style로 제어 (display:none)
+            v-show : css style로 제어 (display:none)
         -->
         <div id="app02_12">
             <button @click="toggle" type="button">Toggle</button>
             <div>
                 <span v-if="show"
-                     class="box"></span>
+                    class="box"></span>
                 <span v-show="show"
-                     class="box"></span>
+                    class="box"></span>
             </div>
         </div>
         <style>
@@ -1797,8 +1797,8 @@
         <div id="app02_20">
 			<input type="text" v-model="message" />				<!-- 입력하는 바로바로 반응성 -->
 			<input type="text" 
-				   @change="message2 = $event.target.value" 
-				   :value="message2" />							<!-- 엔터키, 포커스 블러 시 반응성 -->
+				    @change="message2 = $event.target.value" 
+				    :value="message2" />							<!-- 엔터키, 포커스 블러 시 반응성 -->
 			<input type="text" v-model.lazy.trim="message3" />	<!-- .lazy : @change와 동일한 기능, .trim : 문자열 공백 제거, 콘솔에서는 이런 형식으로 사용 vm02_20.message.trim()   -->
 			<input type="text" v-model.number="message4" />		<!-- .number : 묹자 데이터를 숫자로 변환, 기준은 parseFloat()을 사용 -->
 			<div>{{ message }}</div>

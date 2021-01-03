@@ -2,910 +2,1007 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
-<title>test</title>
-<script src="../common/js/jquery-1.9.1.min.js"></script>
+<title>css test</title>
+<link type="text/css" rel="stylesheet" href="../common/css/reset.css"/>
+<script type="text/javascript" src="../common/js/XRegExp.js"></script>
+<script type="text/javascript" src="../common/js/shCore.js"></script>
+<script type="text/javascript" src="../common/js/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="../common/css/shCore.css"/>
+<link type="text/css" rel="Stylesheet" href="../common/css/shThemeDefault.css" />
+<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 <style type="text/css">
-@charset "UTF-8";
+	* {box-sizing: border-box;}
+    body {background: #050801;padding:50px 10px;-webkit-tap-highlight-color:transparent;}
+    /* body > div {overflow:hidden;} */
+    body > div + div {margin-top:200px;}
+    body > div > div {margin-top:100px;}
+	body > div > h2 + div {margin-top:50px;}
+	body > div > h2 {font-size: 36px;text-align: center;}
+    body > div > h2,
+    body > div > div > div > * {color:#fff;}
+    body > div > div > div > * + * {margin-top:20px;}
+    body a,
+    body a:hover {color:aqua;}
+    body > div > div > div + div {margin-top:50px;}
 
-body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,
-input,legend,li,ol,p,select,table,td,textarea,th, ul {margin:0;padding:0;}
-body,button,input,select,table,textarea {font-size:12px;font-family:Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;}
-button,input {border-radius:0;}
-fieldset,img {border:0;}
-ol,ul {list-style:none;}
-address,em {font-style:normal;}
-a {text-decoration:none;}
-a:hover {text-decoration:underline;}
-iframe {overflow:hidden;margin:0;padding:0;border:0;}
-.blind {position:absolute;overflow:hidden;clip:rect(0 0 0 0);margin:-1px;width:1px;height:1px;}
+    .syntaxhighlighter {margin:10px 0 0 0 !important;}
+    .syntaxhighlighter .line {line-height: 24px !important;font-size: 14px !important;}
+    .syntaxhighlighter table td.gutter .line {padding: 0 0.5em 0 0.5em !important;}
 
-* {box-sizing: border-box;}
-body {background: #050801;padding-bottom:100px;-webkit-tap-highlight-color:transparent;}
-body > div {font-family:consolas;color:#fff;margin-top:100px;}
+    @media (min-width:1024px) {
+        body {width:1024px;margin:0 auto;}
+        .syntaxhighlighter {max-height:25vw; overflow-y:scroll;}
+        .syntaxhighlighter .line {line-height: 18px !important;}
+    }
+    @media (max-width:768px) {
+        .syntaxhighlighter {max-height:92vw; overflow-y:scroll;}
+        .syntaxhighlighter table td.gutter .line {padding: 0 5px !important;}
+        .syntaxhighlighter .line {line-height: 24px !important;padding: 0 10px !important;}
+    }
 </style>
 
 </head>
 <body>
-
-	<div class="border_animation01">
-		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
-		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
-		<a href="#"><span></span><span></span><span></span><span></span>Neon Button</a>
-		<style>
-			.border_animation01  {text-align: center;}
-			.border_animation01 a {
-				position: relative;
-				display: inline-block;
-				padding: 25px 30px;
-				margin: 40px 0;
-				color: #03e9f4;
-				font-size: 24px;
-				text-decoration: none;
-				text-transform: uppercase;
-				overflow: hidden;
-				letter-spacing: 4px;
-				transition: 0.5s;
-				-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-			}
-			.border_animation01 a + a {margin-left:50px;}
-			.border_animation01 a:nth-child(1) {
-				filter: hue-rotate(290deg);
-			}
-			.border_animation01 a:nth-child(3) {
-				filter: hue-rotate(110deg);
-			}
-			.border_animation01 a:hover {
-				background: #03e9f4;
-				color: #050801;
-				box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
-			}
-			.border_animation01 a span {
-				position: absolute;
-				display: block;
-			}
-			.border_animation01 a span:nth-child(1) {
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background: linear-gradient(90deg, transparent, #03e9f4);
-				animation: animate01_01 3s linear infinite;
-			}
-			.border_animation01 a span:nth-child(2) {
-				top: -100%;
-				right: 0;
-				width: 2px;
-				height: 100%;
-				background: linear-gradient(180deg, transparent, #03e9f4);
-				animation: animate01_02 3s linear infinite;
-				animation-delay: 0.75s;
-			}
-			.border_animation01 a span:nth-child(3) {
-				bottom: 0;
-				right: -100%;
-				width: 100%;
-				height: 2px;
-				background: linear-gradient(270deg, transparent, #03e9f4);
-				animation: animate01_03 3s linear infinite;
-				animation-delay: 1.5s;
-			}
-			.border_animation01 a span:nth-child(4) {
-				bottom: -100%;
-				left: 0;
-				width: 2px;
-				height: 100%;
-				background: linear-gradient(360deg, transparent, #03e9f4);
-				animation: animate01_04 3s linear infinite;
-				animation-delay: 2.25s;
-			}
-			@media all and (max-width:768px){
-				.border_animation01 a {display:block;width:80%; margin:0 auto 100px;}
-				.border_animation01 a + a {margin-left:auto;}
-			}
-
-			@keyframes animate01_01{
-				0%			{left: -100%;}
-				50%, 100%	{left: 100%;}
-			}
-			@keyframes animate01_02{
-				0%			{top: -100%;}
-				50%, 100%	{top: 100%;}
-			}
-			@keyframes animate01_03{
-				0%			{right: -100%;}
-				50%, 100%	{right: 100%;}
-			}
-			@keyframes animate01_04{
-				0%			{bottom: -100%;}
-				50%, 100%	{bottom: 100%;}
-			}
-		</style>
-	</div>
-		
-	<div class="border_animation02">
-		<div><span></span><span></span><span></span><span></span></div>
-		<style>
-			.border_animation02 > div {
-				position: relative;
-				width: 100px;
-				height: 100px;
-				margin:0 auto;
-				overflow: hidden;
-				-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
-			}
-			.border_animation02 > div:hover {
-				background: #03e9f4;
-				box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
-			}
-			.border_animation02 > div span {
-				position: absolute;
-				display: block;
-			}
-			.border_animation02 > div span:nth-child(1) {
-				top: 0;
-				left: -100%;
-				width: 100%;
-				height: 2px;
-				background: linear-gradient(90deg, transparent, #03e9f4);
-				animation: animate02_01 2s linear infinite;
-			}
-			.border_animation02 span:nth-child(3) {
-				bottom: 0;
-				left: -100%;
-				width: 100%;
-				height: 2px;
-				background: linear-gradient(270deg, transparent, #03e9f4);
-				animation: animate02_03 2s linear infinite;
-			}
-			.border_animation02 span:nth-child(2) {
-				top: -100%;
-				right: 0;
-				width: 2px;
-				height: 100%;
-				background: linear-gradient(180deg, transparent, #03e9f4);
-				animation: animate02_02 2s linear infinite;
-				animation-delay: 1s;
-			}
-			.border_animation02 span:nth-child(4) {
-				top: 100%;
-				left: 0;
-				width: 2px;
-				height: 100%;
-				background: linear-gradient(360deg, transparent, #03e9f4);
-				animation: animate02_04 2s linear infinite;
-				animation-delay: 1s;
-			}
-			@keyframes animate02_01{
-				0%		{left: -100%;}
-				100%	{left: 100%;}
-			}
-			@keyframes animate02_03{
-				0%		{left: 100%;}
-				100%	{left: -100%;}
-			}
-			@keyframes animate02_02{
-				0%		{top: -100%;}
-				100%	{top: 100%;}
-			}
-			@keyframes animate02_04{
-				0%		{top: 100%;}
-				100%	{top: -100%;}
-			}
-		</style>
-	</div>
-
-	<div class="button_animation01">
-		<a href="#">Click, MouseDown, Touch</a>
-		<style>
-			.button_animation01  {text-align: center;}
-			.button_animation01 a {
-				position:relative;
-				display:inline-block;
-				padding:12px 36px;
-				margin:10px;
-				color:#fff;
-				background:#333;
-				border-radius: 40px;
-				font-size:18px;
-				text-decoration:none;
-				letter-spacing:2px;
-				overflow:hidden;
-
-			}
-			.button_animation01 a span {
-				position:absolute;
-				background: #fff;
-				transform: translate(-50%, -50%);
-				pointer-events: none;
-				border-radius: 50%;
-				animation: button_animation01 0.75s linear 1;
-			}
-			@media all and (max-width:768px){
-				.button_animation01 a {display:block;width:80%; margin:0 auto;letter-spacing:-1px;}
-			}
-			@keyframes button_animation01{
-				0%		{width:0; opacity:0.4;}
-				100%	{width:200%; padding-bottom:200%; opacity:0;}
-
-			}
-		</style>	
-		<script type="text/javascript">
-			// remove() ie polyfill
-			(function (arr) {
-			  arr.forEach(function (item) {
-				if (item.hasOwnProperty('remove')) {
-				  return;
+	<div>
+		<h2>Animation</h2>
+		<div class="border_animation01">
+			<a href="#none"><span></span><span></span><span></span><span></span>Neon Button</a>
+			<a href="#none"><span></span><span></span><span></span><span></span>Neon Button</a>
+			<a href="#none"><span></span><span></span><span></span><span></span>Neon Button</a>
+			<style>
+				.border_animation01  {text-align: center;}
+				.border_animation01 a {
+					position: relative;
+					display: inline-block;
+					padding: 15px 20px;
+					margin: 40px 0;
+					color: #03e9f4;
+					font-size: 20px;
+					text-decoration: none;
+					text-transform: uppercase;
+					overflow: hidden;
+					letter-spacing: 4px;
+					transition: 0.5s;
+					-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 				}
-				Object.defineProperty(item, 'remove', {
-				  configurable: true,
-				  enumerable: true,
-				  writable: true,
-				  value: function remove() {
-					if (this.parentNode !== null)
-					  this.parentNode.removeChild(this);
-				  }
-				});
-			  });
-			})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
-		
-			const buttons = document.querySelectorAll('.button_animation01 a');
-			/*
-			//buttons.forEach(function(btn){
-			buttons.forEach(btn =>{		// ie x
-				btn.addEventListener('mouseenter', function(e){
-					createSpan(e);
-				});
-				
-				btn.addEventListener('click', function(e){
-					e.preventDefault();
-					createSpan(e);
-				});
-			*/
-				
-			for(var i = 0; i < buttons.length; i++){
-				buttons[i].addEventListener('mouseenter', function(e){
-					createSpan(e);
-				});
-				
-				buttons[i].addEventListener('click', function(e){
-					e.preventDefault();
-					createSpan(e);
-				});
-				
-				function createSpan(event){
-					let e = event,
-						x = e.clientX - e.target.offsetLeft,
-						y = e.clientY - e.target.offsetTop + window.scrollY,
-						ripples = document.createElement('span');
-						
-					ripples.style.left = x +"px";
-					ripples.style.top = y +"px";
-					
-					e.currentTarget.appendChild(ripples);		// this.appendChild(ripples);   this = window
-					
-					setTimeout( function(){
-						ripples.remove();
-					}, 1000);
+				.border_animation01 a + a {margin-left:50px;}
+				.border_animation01 a:nth-child(1) {
+					filter: hue-rotate(290deg);
 				}
-			}
-		</script>
-	</div>
+				.border_animation01 a:nth-child(3) {
+					filter: hue-rotate(110deg);
+				}
+				.border_animation01 a:hover {
+					background: #03e9f4;
+					color: #050801;
+					box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+				}
+				.border_animation01 a span {
+					position: absolute;
+					display: block;
+				}
+				.border_animation01 a span:nth-child(1) {
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(90deg, transparent, #03e9f4);
+					animation: animate01_01 3s linear infinite;
+				}
+				.border_animation01 a span:nth-child(2) {
+					top: -100%;
+					right: 0;
+					width: 2px;
+					height: 100%;
+					background: linear-gradient(180deg, transparent, #03e9f4);
+					animation: animate01_02 3s linear infinite;
+					animation-delay: 0.75s;
+				}
+				.border_animation01 a span:nth-child(3) {
+					bottom: 0;
+					right: -100%;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(270deg, transparent, #03e9f4);
+					animation: animate01_03 3s linear infinite;
+					animation-delay: 1.5s;
+				}
+				.border_animation01 a span:nth-child(4) {
+					bottom: -100%;
+					left: 0;
+					width: 2px;
+					height: 100%;
+					background: linear-gradient(360deg, transparent, #03e9f4);
+					animation: animate01_04 3s linear infinite;
+					animation-delay: 2.25s;
+				}
+				@media all and (max-width:768px){
+					.border_animation01 a {display:block;width:80%; margin:0 auto 100px;}
+					.border_animation01 a + a {margin-left:auto;}
+				}
 
-	<div class="progress_box">
-		<div>
-			<div class="percent">
-				<svg>
-					<circle cx="70" cy="70" r="70"></circle>
-					<circle cx="70" cy="70" r="70"></circle>
-				</svg>
-				<div class="number">
-					<h2>87<span>%</span></h2>
-				</div>
-			</div>
-			<h2 class="text">Progress(ie x)</h2>
+				@keyframes animate01_01{
+					0%			{left: -100%;}
+					50%, 100%	{left: 100%;}
+				}
+				@keyframes animate01_02{
+					0%			{top: -100%;}
+					50%, 100%	{top: 100%;}
+				}
+				@keyframes animate01_03{
+					0%			{right: -100%;}
+					50%, 100%	{right: 100%;}
+				}
+				@keyframes animate01_04{
+					0%			{bottom: -100%;}
+					50%, 100%	{bottom: 100%;}
+				}
+			</style>
 		</div>
-		<style>
-			.progress_box > div {
-				position:relative;
-				width:300px;
-				height:300px;
-				margin:0 auto;
-				padding: 50px;
-				display:flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				background:#fff;
-				color: #000;
-			}
-			.progress_box .percent{
-				position: relative;
-				width:150px;
-				height:150px;   
-			}
-			.progress_box .percent svg{
-				position: relative;
-				width:150px;
-				height:150px;
-			}
-			.progress_box .percent svg circle{
-				width:150px;
-				height:150px;
-				fill:none;
-				stroke-width:10;
-				stroke:#000;
-				transform: translate(5px, 5px);
-				stroke-dasharray:440;
-				stroke-dashoffset:440;
-				stroke-linecap:round;
-			}
-			.progress_box .percent svg circle:nth-child(1){
-				stroke-dashoffset:0;
-				stroke:#f3f3f3;
-			}
-			.progress_box .percent svg circle:nth-child(2){
-				stroke-dashoffset:calc(440 - (440  * 87) / 100);
-				stroke:#03a9f4;
-			}
-			.progress_box .percent .number{
-				position: absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				display:flex;
-				justify-content: center;
-				align-items: center;
-				color:#999;
-			}
-			.progress_box .percent .number h2{font-size:48px;}
-			.progress_box .percent .number h2 span{font-size:24px;}
-			.progress_box .percent .text{
-				padding:10px 0 0;
-				color:#999;
-				font-weight:bold;
-				letter-spacing: 1px;
-			}
-		</style>
+		
+		<div class="border_animation02">
+			<div><span></span><span></span><span></span><span></span></div>
+			<style>
+				.border_animation02 > div {
+					position: relative;
+					width: 100px;
+					height: 100px;
+					margin:0 auto;
+					overflow: hidden;
+					-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+				}
+				.border_animation02 > div:hover {
+					background: #03e9f4;
+					box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+				}
+				.border_animation02 > div span {
+					position: absolute;
+					display: block;
+				}
+				.border_animation02 > div span:nth-child(1) {
+					top: 0;
+					left: -100%;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(90deg, transparent, #03e9f4);
+					animation: animate02_01 2s linear infinite;
+				}
+				.border_animation02 span:nth-child(3) {
+					bottom: 0;
+					left: -100%;
+					width: 100%;
+					height: 2px;
+					background: linear-gradient(270deg, transparent, #03e9f4);
+					animation: animate02_03 2s linear infinite;
+				}
+				.border_animation02 span:nth-child(2) {
+					top: -100%;
+					right: 0;
+					width: 2px;
+					height: 100%;
+					background: linear-gradient(180deg, transparent, #03e9f4);
+					animation: animate02_02 2s linear infinite;
+					animation-delay: 1s;
+				}
+				.border_animation02 span:nth-child(4) {
+					top: 100%;
+					left: 0;
+					width: 2px;
+					height: 100%;
+					background: linear-gradient(360deg, transparent, #03e9f4);
+					animation: animate02_04 2s linear infinite;
+					animation-delay: 1s;
+				}
+				@keyframes animate02_01{
+					0%		{left: -100%;}
+					100%	{left: 100%;}
+				}
+				@keyframes animate02_03{
+					0%		{left: 100%;}
+					100%	{left: -100%;}
+				}
+				@keyframes animate02_02{
+					0%		{top: -100%;}
+					100%	{top: 100%;}
+				}
+				@keyframes animate02_04{
+					0%		{top: 100%;}
+					100%	{top: -100%;}
+				}
+			</style>
+		</div>
+		
+		<div class="typing_text">
+			<div>
+				<ul>
+					<li><a href="#none" data-text="Home">Home</a></li>
+					<li><a href="#none" data-text="About">About</a></li>
+					<li><a href="#none" data-text="Services">Services</a></li>
+					<li><a href="#none" data-text="Typing Menu">Typing Menu</a></li>
+					<li><a href="#none" data-text="Our Team">Our Team</a></li>
+					<li><a href="#none" data-text="Contact Us">Contact Us</a></li>
+				</ul>
+			</div>
+			<style>
+				.typing_text > div  {
+					text-align: center;
+				}
+				.typing_text ul {
+					position:relative;
+					display:inline-block;
+					text-align: left;
+					background: blueviolet;
+				}
+				.typing_text ul li {
+					padding: 0 20px;
+					font-size:4em;
+					position: relative;
+				}
+				.typing_text ul li a {
+					position:relative;
+					color: rgba(255,255,255,0.1) !important;
+					text-decoration:none;
+					font-weight:bold;
+					display: block;
+				}
+				.typing_text ul li a:before {
+					content:attr(data-text);
+					position:absolute;
+					top:0;
+					overflow:hidden;
+					width:0;
+					color:#1bfaad;
+					white-space:nowrap;
+				}
+				.typing_text ul li:hover a:before {
+					animation: text_li 1s steps(11) forwards;
+				}
+				@keyframes text_li {
+					0%		{width: 0;}
+					100%	{width: 100%;}
+				}
+				@media (max-width:768px) {
+					.typing_text ul {
+						display:block;
+					}
+				}
+			</style>
+		</div>
 	</div>
+
+	<div>
+		<h2>Custom Properties</h2>
+		<div class="loader">
+			<div>
+				<span style="--i:1">A</span>
+				<span style="--i:2">n</span>
+				<span style="--i:3">i</span>
+				<span style="--i:4">m</span>
+				<span style="--i:5">a</span>
+				<span style="--i:6">t</span>
+				<span style="--i:7">i</span>
+				<span style="--i:8">o</span>
+				<span style="--i:9">n</span>
+				<style>
+					.loader {
+						position:relative;
+						text-align: center;
+					}
+					.loader span {
+						display:inline-block;
+						position:relative;
+						color:#fff;
+						font-size:2em;
+						animation: loader 2s ease-in-out infinite;
+						animation-delay: calc(0.1s * var(--i));
+						animation-play-state: running;
+					}
+					.loader:hover span {animation-play-state: paused;}
 	
-	<div class="loader">
-		<span style="--i:1">A</span>
-		<span style="--i:2">n</span>
-		<span style="--i:3">i</span>
-		<span style="--i:4">m</span>
-		<span style="--i:5">a</span>
-		<span style="--i:6">t</span>
-		<span style="--i:7">i</span>
-		<span style="--i:8">o</span>
-		<span style="--i:9">n</span>
-		<style>
-			.loader {
-				position:relative;
-				text-align: center;
-			}
-			.loader span {
-				display:inline-block;
-				position:relative;
-				color:#fff;
-				font-size:2em;
-				animation: loader 2s ease-in-out infinite;
-				animation-delay: calc(0.1s * var(--i));
-				animation-play-state: running;
-			}
-			.loader:hover span {animation-play-state: paused;}
-
-			@keyframes loader {
-				0%, 40%, 100% {transform: translateY(0);}
-				20% {transform: translateY(-40px);}
-			}
-		</style>
-	</div>
-
-	<div class="image_hover_effects">
-		<!-- 1 -->
-		<div class="box">
-			<div class="imgBx"><img src="https://www.shilladfs.com/comm/resources/event/14665780944396dafce65-6103-4e36-a566-13dca24b81bd.jpg" alt="" /></div>
-			<div class="contentBx">
-				<div>
-					<h2>Post Title</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
+					@keyframes loader {
+						0%, 40%, 100% {transform: translateY(0);}
+						20% {transform: translateY(-40px);}
+					}
+				</style>
+			</div>
+			<div>
+				<p><a target="_blank" href="https://developer.mozilla.org/ko/docs/Web/CSS/Using_CSS_custom_properties">Using_CSS_custom_properties</a></p>
 			</div>
 		</div>
-		<style>
-			.image_hover_effects {
-				position:relative;
-				display:flex;
-				flex-wrap:wrap;
-				justify-content:space-around;
-				transform-style: preserve-3d;
-			}
-			.image_hover_effects .box {
-				position:relative;
-				width:400px;
-				height:300px;
-				margin:20px 0;
-				perspective: 1000px;
-				overflow:hidden;
-				transform-style: preserve-3d;
-			}
-			.image_hover_effects .box .imgBx {
-				position:absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				transform-origin: top;
-				transform-style: preserve-3d;
-				transition: 0.5s;
-				transition-delay: 0.2s;
-			}
-			.image_hover_effects .box .imgBx img {
-				position:absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				object-fit: cover;
-			}
-			.image_hover_effects .box:hover .imgBx {
-				transform: rotateX(-90deg);
-				opacity:0;
-				transition-delay: 0s;
-			}
-			.image_hover_effects .box .contentBx {
-				position:absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				padding:40px;
-				background:#333;
-				display:flex;
-				justify-content:center;
-				align-items:center;
-				transform-origin: bottom;
-				transform-style: preserve-3d;
-				transition: 0.5s;
-				transform: rotateX(90deg);
-				opacity:0;
-				color:#fff;
-			}
-			.image_hover_effects .box:hover .contentBx {
-				transform: rotateX(0deg);
-				opacity:1;
-				transition-delay: 0.2s;
-			}
-			@media all and (max-width:768px){
-				.image_hover_effects .box {width:80%;margin:0 auto;}
-			}
-		</style>
+	
+		<div class="loader02">
+			<div>
+				<span><em>L</em></span>
+				<span><em>o</em></span>
+				<span><em>a</em></span>
+				<span><em>d</em></span>
+				<span><em>i</em></span>
+				<span><em>n</em></span>
+				<span><em>g</em></span>
+				<span><em>.</em></span>
+				<style>
+					.loader02 > div {
+						display: flex;
+						justify-content: center;
+						align-items: flex-end;
+						padding-bottom:60px;
+					}
+					.loader02 span {
+						width: 15px;
+						height: 10px;
+						background: #fff;
+						margin: 0 5px;
+						height: calc(10px * var(--i));
+						display: flex;
+						justify-content: center;
+						align-items: flex-end;
+						animation: loader02_01 2.4s linear infinite;
+						animation-delay: calc(0.4s * var(--i));
+						box-shadow: 0 0 10px #00b3ff,
+									0 0 20px #00b3ff,
+									0 0 40px #00b3ff,
+									0 0 80px #00b3ff;
+					}
+					.loader02 span:nth-child(1) {--i:1;}
+					.loader02 span:nth-child(2) {--i:2;}
+					.loader02 span:nth-child(3) {--i:3;}
+					.loader02 span:nth-child(4) {--i:4;}
+					.loader02 span:nth-child(5) {--i:5;}
+					.loader02 span:nth-child(6) {--i:6;}
+					.loader02 span:nth-child(7) {--i:7;}
+					.loader02 span:nth-child(8) {--i:8;}
+					.loader02 span em {
+						display:block;
+						color: #fff;
+						font-size: 40px;
+						font-weight: bold;
+						transform: translateY(60px);
+						color: #fff;
+						text-shadow: 0 0 10px #00b3ff,
+									0 0 20px #00b3ff,
+									0 0 40px #00b3ff,
+									0 0 80px #00b3ff,
+									0 0 120px #00b3ff,
+									0 0 200px #00b3ff,
+									0 0 300px #00b3ff,
+									0 0 400px #00b3ff;
+					}
+					@keyframes loader02_01 {
+						0%, 100% {
+							background: #fff;
+							filter: blur(1px);
+							box-shadow: 0 0 10px #00b3ff,
+										0 0 20px #00b3ff,
+										0 0 40px #00b3ff,
+										0 0 80px #00b3ff;
+						}
+						35%,65% {
+							background: #111;
+							filter: blur(0px);
+							box-shadow: none;
+						}
+					}
+				</style>
+			</div>
+		</div>
 	</div>
 
-	<div class="loader02">
-		<div>
-			<span style="--i:1"><em>L</em></span>
-			<span style="--i:2"><em>o</em></span>
-			<span style="--i:3"><em>a</em></span>
-			<span style="--i:4"><em>d</em></span>
-			<span style="--i:5"><em>i</em></span>
-			<span style="--i:6"><em>n</em></span>
-			<span style="--i:7"><em>g</em></span>
-			<span style="--i:8"><em>.</em></span>
+	<div>
+		<h2>Hover</h2>
+		<div class="clip_path">
+			<div>
+				<a href="#none">
+					<span>Button</span>
+					<span>Button</span>
+				</a>
+				<style>
+				.clip_path > div:first-child{
+					display:flex;
+					justify-content: center;
+				}
+				.clip_path > div:first-child > a {
+					position: relative;
+					display: inline-block;
+					width:160px;height:50px;
+					box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+				}
+				.clip_path > div:first-child > a span {
+					position:absolute;
+					top:0;left:0;
+					width:100%;height:100%;
+					display:flex;
+					justify-content: center;
+					align-items: center;
+					color:#fff;
+					font-size: 18px;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+					background-color: #6c4ba5;
+				}
+				.clip_path > div:first-child > a span:nth-child(2) {
+					color:#6c4ba5;
+					background-color: #fff;
+					z-index: 2;
+					transition: 0.5s;
+					clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 60% 100%, 40% 50%);
+				}
+				.clip_path > div:first-child > a span:nth-child(2):hover {
+					clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50%);
+				}
+				.clip_path > div:first-child > a span:nth-child(1):hover ~ span:nth-child(2) {
+					clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 50%);
+				}
+				</style>
+			</div>
+			
+			<div>
+				<h2>스타일이 다른 span 태그 2개를 겹친후<br>
+					clip-path를 사용해서 hover시 모양을 변형 시킨다.</h2>
+				<ul>
+					<li><a target="_blank" href="https://developer.mozilla.org/ko/docs/Web/CSS/clip-path">MDN clip-path</a></li>
+					<li><a target="_blank" href="https://bennettfeely.com/clippy/">CSS clip-path maker</a></li>
+				</ul>
+			</div>
 		</div>
-		<style>
-			.loader02 > div {
-				display: flex;
-				justify-content: center;
-				align-items: flex-end;
-				padding-bottom:60px;
-			}
-			.loader02 span {
-				width: 15px;
-				height: 10px;
-				background: #fff;
-				margin: 0 5px;
-				height: calc(10px * var(--i));
-				display: flex;
-				justify-content: center;
-				align-items: flex-end;
-				animation: loader02_01 1.6s linear infinite;
-				animation-delay: calc(0.2s * var(--i));
-				box-shadow: 0 0 10px #00b3ff,
-							0 0 20px #00b3ff,
-							0 0 40px #00b3ff,
-							0 0 80px #00b3ff,
-							0 0 120px #00b3ff,
-							0 0 200px #00b3ff,
-							0 0 300px #00b3ff,
-							0 0 400px #00b3ff;
-			}
-			.loader02 span em {
-				display:block;
-				color: #fff;
-				font-size: 40px;
-				font-weight: bold;
-				transform: translateY(60px);
-				color: #fff;
-				text-shadow: 0 0 10px #00b3ff,
-							0 0 20px #00b3ff,
-							0 0 40px #00b3ff,
-							0 0 80px #00b3ff,
-							0 0 120px #00b3ff,
-							0 0 200px #00b3ff,
-							0 0 300px #00b3ff,
-							0 0 400px #00b3ff;
-			}
-			@keyframes loader02_01 {
-				0%, 100% {
+
+		<div class="image_hover_effects">
+			<div class="box">
+				<div class="imgBx"><img src="https://www.shilladfs.com/comm/resources/event/14665780944396dafce65-6103-4e36-a566-13dca24b81bd.jpg" alt="" /></div>
+				<div class="contentBx">
+					<div>
+						<h2>Post Title</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+			</div>
+			<style>
+				.image_hover_effects {
+					position:relative;
+					display:flex;
+					flex-wrap:wrap;
+					justify-content:space-around;
+					transform-style: preserve-3d;
+				}
+				.image_hover_effects .box {
+					position:relative;
+					width:400px;
+					height:300px;
+					margin:20px 0;
+					perspective: 1000px;
+					overflow:hidden;
+					transform-style: preserve-3d;
+				}
+				.image_hover_effects .box .imgBx {
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					transform-origin: top;
+					transform-style: preserve-3d;
+					transition: 0.5s;
+					transition-delay: 0.2s;
+				}
+				.image_hover_effects .box .imgBx img {
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					object-fit: cover;
+				}
+				.image_hover_effects .box:hover .imgBx {
+					transform: rotateX(-90deg);
+					opacity:0;
+					transition-delay: 0s;
+				}
+				.image_hover_effects .box .contentBx {
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					padding:40px;
+					background:#333;
+					display:flex;
+					justify-content:center;
+					align-items:center;
+					transform-origin: bottom;
+					transform-style: preserve-3d;
+					transition: 0.5s;
+					transform: rotateX(90deg);
+					opacity:0;
+					color:#fff;
+				}
+				.image_hover_effects .box:hover .contentBx {
+					transform: rotateX(0deg);
+					opacity:1;
+					transition-delay: 0.2s;
+				}
+				@media all and (max-width:768px){
+					.image_hover_effects .box {width:80%;margin:0 auto;}
+				}
+			</style>
+		</div>
+		
+		<div class="hover_effect">
+			<div>
+				<ul>
+					<li data-text="Home"><a href="#none">Home</a></li>
+					<li data-text="About"><a href="#none">About</a></li>
+					<li data-text="Services"><a href="#none">Services</a></li>
+					<li data-text="Typing Menu"><a href="#none">Typing Menu</a></li>
+					<li data-text="Our Team"><a href="#none">Our Team</a></li>
+					<li data-text="Contact Us"><a href="#none">Contact Us</a></li>
+				</ul>
+			</div>
+			<style>
+				.hover_effect {
+					background:#0d0f1b;
+					text-align: center;
+					padding: 20px 0;
+					overflow:hidden;
+				}
+				.hover_effect div {
+					display:inline-block;
+				}
+				.hover_effect div ul {
+					position:relative;
+					display:flex;
+					flex-direction:column;
+					text-align: left;
+				}
+				.hover_effect div ul li:before {
+					content:attr(data-text);
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform:translate(-50%,-50%);
+					color:#fff;
+					font-size:6em;
+					font-weight:bold;
+					pointer-events:none;
+					opacity:0;
+					letter-spacing:20px;
+					transition:0.5s;
+					white-space:nowrap;
+				}
+				.hover_effect div ul li:hover:before {
+					opacity:0.05;
+					letter-spacing:0px;
+				}
+				.hover_effect div ul li a {
+					position:relative;
+					z-index:1;
+					display:inline-block;
+					padding:6px 15px;
+					text-decoration:none;
+					background:#2196f3;
+					color:#fff;
+					text-transform:uppercase;
+					letter-spacing:2px;
+					overflow:hidden;
+					transition: 0.5s;
+				}
+				.hover_effect div ul:hover li a {
+					opacity:0;
+				}
+				.hover_effect div ul li a:before {
+					content:'';
+					position:absolute;
+					top:0;
+					left:-100px;
+					width:80px;
+					height:100%;
+					background:linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+					transform: skewX(35deg);
+					transition:0s;
+				}
+				.hover_effect div ul li a:hover {
+					transform: scale(1.4);
+					z-index:1000;
+					background:#ff3f81;
+					opacity:1;
+				}
+				.hover_effect div ul li a:hover:before {
+					left:calc(100% + 100px);
+					transition:0.5s;
+					transition-delay:0.2s;
+				}
+			</style>
+		</div>
+	</div>
+
+	<div>
+		<h2>Ripple</h2>
+		<div class="button_animation01">
+			<a href="#">MouseDown, Touch</a>
+			<style>
+				.button_animation01  {text-align: center;}
+				.button_animation01 a {
+					position:relative;
+					display:inline-block;
+					padding:12px 36px;
+					margin:10px;
+					color:#fff;
+					background:#333;
+					border-radius: 40px;
+					font-size:18px;
+					text-decoration:none;
+					letter-spacing:2px;
+					overflow:hidden;
+	
+				}
+				.button_animation01 a span {
+					position:absolute;
 					background: #fff;
-					filter: blur(1px);
-					box-shadow: 0 0 10px #00b3ff,
-								0 0 20px #00b3ff,
-								0 0 40px #00b3ff,
-								0 0 80px #00b3ff,
-								0 0 120px #00b3ff,
-								0 0 200px #00b3ff,
-								0 0 300px #00b3ff,
-								0 0 400px #00b3ff;
+					transform: translate(-50%, -50%);
+					pointer-events: none;
+					border-radius: 50%;
+					animation: button_animation01 0.75s linear 1;
 				}
-				35%,65% {
-					background: #111;
-					filter: blur(0px);
-					box-shadow: none;
+				@media all and (max-width:768px){
+					.button_animation01 a {display:block;width:80%; margin:0 auto;letter-spacing:-1px;}
 				}
-			}
-		</style>
-	</div>
-
-	<div class="progress_bar">
-		<div>
-			<section>
-				<h2>Creative Scroll Progress Bar</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<div id="progressBar"></div>
-				<div id="scrollPath"></div>
-			</section>
-		</div>
-		<style>
-			.progress_bar > div {
-				width:400px;
-				height:400px;
-				margin:0 auto;
-				overflow-y:scroll;
-			}
-			.progress_bar > div::-webkit-scrollbar {
-				width:0;
-			}
-			.progress_bar section {
-				position:relative;
-				padding:50px 30px;
-				background:#333;
-			}
-			.progress_bar section h2 {
-				font-size:2.5em;
-				color: #fff;
-			}
-			.progress_bar section p {
-				font-size:1.2em;
-				color: #fff;
-			}
-			.progress_bar #scrollPath {
-				position:absolute;
-				top:0;
-				right:0;
-				width:10px;
-				height:100%;
-				background:rgba(255,255,255,0.2);
-			}
-			.progress_bar #progressBar {
-				position:absolute;
-				top:0;
-				right:0;
-				z-index:99;
-				width:10px;
-				/*height:100%;*/
-				background:linear-gradient(to top, #008aff, #00ffe7);
-				animation: progress_bar 5s linear infinite;
-			}
-			@keyframes progress_bar{
-				0%,100% {filter: hue-rotate(0deg);}
-				50%		{filter: hue-rotate(360deg);}
-			}
-			.progress_bar #progressBar:before {
-				content:'';
-				position:absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				background:linear-gradient(to top, #008aff, #00ffe7);
-				filter:blur(30px);
-			}
-			.progress_bar #progressBar:after {
-				content:'';
-				position:absolute;
-				top:0;
-				left:0;
-				width:100%;
-				height:100%;
-				background:linear-gradient(to top, #008aff, #00ffe7);
-				filter:blur(10px);
-			}
-			@media all and (max-width:768px){
-				.progress_bar > div {width:100%;margin:0 auto;}
-			}
-		</style>
-		<script type="text/javascript">
-			let scrollBox = document.querySelector('.progress_bar > div');
-				
-			scrollBox.onscroll = function(){
-				let progressBar		= document.getElementById('progressBar'),
-					scrollInner		= document.querySelector('.progress_bar section'),
-					maxScrollValue	= scrollInner.offsetHeight - scrollBox.offsetHeight;	// 954 - 400 = 554
-					progressHeight	= ( scrollBox.scrollTop / maxScrollValue ) * 100;		// (200 / 554) * 100 = 36.1%
+				@keyframes button_animation01{
+					0%		{width:0; opacity:0.4;}
+					100%	{width:200%; padding-bottom:200%; opacity:0;}
+	
+				}
+			</style>	
+			<script type="text/javascript">
+				// remove() ie polyfill
+				(function (arr) {
+					arr.forEach(function (item) {
+						if (item.hasOwnProperty('remove')) {
+							return;
+						}
+						Object.defineProperty(item, 'remove', {
+							configurable: true,
+							enumerable: true,
+							writable: true,
+							value: function remove() {
+							if (this.parentNode !== null)
+								this.parentNode.removeChild(this);
+							}
+						});
+					});
+				})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+			
+				const buttons = document.querySelectorAll('.button_animation01 a');
+				/*
+				//buttons.forEach(function(btn){
+				buttons.forEach(btn =>{		// ie x
+					btn.addEventListener('mouseenter', function(e){
+						createSpan(e);
+					});
 					
-				progressBar.style.height = progressHeight + "%";
-				
-				// scrollHeight : 스크롤바 높이를 뺀 내용 전체의 높이
-				// clientHeight : 스크롤바 높이를 뺀 가시적인 높이
-				// offsetHeight : 스크롤바 높이를 포함한 가시적인 높이
-			}
-		</script>
-	</div>
-
-	<div class="position_sticky">
-		<div>
-			<h2>
-				<span style="--i:0">P</span>
-				<span style="--i:1">O</span>
-				<span style="--i:2">S</span>
-				<span style="--i:3">I</span>
-				<span style="--i:4">T</span>
-				<span style="--i:5">I</span>
-				<span style="--i:6">O</span>
-				<span style="--i:7">N</span>
-				<span style="--i:8">_</span>
-				<span style="--i:9">S</span>
-				<span style="--i:10">T</span>
-				<span style="--i:11">I</span>
-				<span style="--i:12">C</span>
-				<span style="--i:13">K</span>
-				<span style="--i:14">Y</span>
-			</h2>
+					btn.addEventListener('click', function(e){
+						e.preventDefault();
+						createSpan(e);
+					});
+				*/
+					
+				for(var i = 0; i < buttons.length; i++){
+					buttons[i].addEventListener('mouseenter', function(e){
+						createSpan(e);
+					});
+					
+					buttons[i].addEventListener('click', function(e){
+						e.preventDefault();
+						createSpan(e);
+					});
+					
+					function createSpan(event){
+						let e = event,
+							x = e.clientX - e.target.offsetLeft,
+							y = e.clientY - e.target.offsetTop + window.scrollY,
+							ripples = document.createElement('span');
+							
+						ripples.style.left = x +"px";
+						ripples.style.top = y +"px";
+						
+						e.currentTarget.appendChild(ripples);		// this.appendChild(ripples);   this = window
+						
+						setTimeout( function(){
+							ripples.remove();
+						}, 1000);
+					}
+				}
+			</script>
 		</div>
-		<style>
-			.position_sticky h2 {
-				position:relative;
-				display:flex;
-				justify-content:center;
-				background:linear-gradient(0deg, #ff0076, #cc00ff, #ffae00, #1fae99, #afaff9);
-			}
-			.position_sticky h2 span {
-				position:sticky;
-				top:0;
-				line-height:100vh;
-				height:100vh;
-				color:#fff;
-				font-size:6em;
-				margin-top:calc( 100vh * var(--i) );
-			}
-			@media all and (max-width:768px){
-				.position_sticky h2 span {font-size:2em;}
-			}
-		</style>
-	</div>
 	
-	<div class="typing_text">
-		<div>
-			<ul>
-				<li><a href="#none" data-text="Home">Home</a></li>
-				<li><a href="#none" data-text="About">About</a></li>
-				<li><a href="#none" data-text="Services">Services</a></li>
-				<li><a href="#none" data-text="Typing Menu">Typing Menu</a></li>
-				<li><a href="#none" data-text="Our Team">Our Team</a></li>
-				<li><a href="#none" data-text="Contact Us">Contact Us</a></li>
-			</ul>
-		</div>
-		<style>
-			.typing_text > div  {
-				text-align: center;
-			}
-			.typing_text ul {
-				position:relative;
-				display:inline-block;
-				text-align: left;
-				background: blueviolet;
-			}
-			.typing_text ul li {
-				padding: 0 20px;
-				font-size:4em;
-				position: relative;
-			}
-			.typing_text ul li a {
-				position:relative;
-				color: rgba(255,255,255,0.1);
-				text-decoration:none;
-				font-weight:bold;
-				display: block;
-			}
-			.typing_text ul li a:before {
-				content:attr(data-text);
-				position:absolute;
-				top:0;
-				overflow:hidden;
-				width:0;
-				color:#1bfaad;
-				white-space:nowrap;
-			}
-			.typing_text ul li:hover a:before {
-				animation: text_li 1s steps(11) forwards;
-			}
-			@keyframes text_li {
-				0%		{width: 0;}
-				100%	{width: 100%;}
-			}
-		</style>
-	</div>
-	
-	<div class="hover_effect">
-		<div>
-			<ul>
-				<li data-text="Home"><a href="#none">Home</a></li>
-				<li data-text="About"><a href="#none">About</a></li>
-				<li data-text="Services"><a href="#none">Services</a></li>
-				<li data-text="Typing Menu"><a href="#none">Typing Menu</a></li>
-				<li data-text="Our Team"><a href="#none">Our Team</a></li>
-				<li data-text="Contact Us"><a href="#none">Contact Us</a></li>
-			</ul>
-		</div>
-		<style>
-			.hover_effect {
-				background:#0d0f1b;
-				text-align: center;
-			}
-			.hover_effect div {
-				display:inline-block;
-			}
-			.hover_effect div ul {
-				position:relative;
-				display:flex;
-				flex-direction:column;
-				text-align: left;
-			}
-			.hover_effect div ul li:before {
-				content:attr(data-text);
-				position:absolute;
-				top:50%;
-				left:50%;
-				transform:translate(-50%,-50%);
-				color:#fff;
-				font-size:6em;
-				font-weight:bold;
-				pointer-events:none;
-				opacity:0;
-				letter-spacing:20px;
-				transition:0.5s;
-				white-space:nowrap;
-			}
-			.hover_effect div ul li:hover:before {
-				opacity:0.05;
-				letter-spacing:0px;
-			}
-			.hover_effect div ul li a {
-				position:relative;
-				z-index:1;
-				display:inline-block;
-				padding:6px 15px;
-				text-decoration:none;
-				background:#2196f3;
-				color:#fff;
-				text-transform:uppercase;
-				letter-spacing:2px;
-				overflow:hidden;
-				transition: 0.5s;
-			}
-			.hover_effect div ul:hover li a {
-				opacity:0;
-			}
-			.hover_effect div ul li a:before {
-				content:'';
-				position:absolute;
-				top:0;
-				left:-100px;
-				width:80px;
-				height:100%;
-				background:linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
-				transform: skewX(35deg);
-				transition:0s;
-			}
-			.hover_effect div ul li a:hover {
-				transform: scale(1.4);
-				z-index:1000;
-				background:#ff3f81;
-				opacity:1;
-			}
-			.hover_effect div ul li a:hover:before {
-				left:calc(100% + 100px);
-				transition:0.5s;
-				transition-delay:0.2s;
-			}
-		 </style>
-	</div>
-
-	<div class="ripple_effect">
-		<div>
-			<div class="container">
-				<div class="box">
-					<span style="--i:1"></span>
-					<span style="--i:2"></span>
-					<span style="--i:3"></span>
-					<span style="--i:4"></span>
-					<span style="--i:5"></span>
-					<span style="--i:6"></span>
-					<span style="--i:7"></span>
-					<span style="--i:8"></span>
-					<span style="--i:9"></span>
-					<span style="--i:10"></span>
-				</div>
-				<div class="box">
-					<span style="--i:1"></span>
-					<span style="--i:2"></span>
-					<span style="--i:3"></span>
-					<span style="--i:4"></span>
-					<span style="--i:5"></span>
-					<span style="--i:6"></span>
-					<span style="--i:7"></span>
-					<span style="--i:8"></span>
-					<span style="--i:9"></span>
-					<span style="--i:10"></span>
+		<div class="ripple_effect">
+			<div>
+				<div class="container">
+					<div class="box">
+						<span style="--i:1"></span>
+						<span style="--i:2"></span>
+						<span style="--i:3"></span>
+						<span style="--i:4"></span>
+						<span style="--i:5"></span>
+						<span style="--i:6"></span>
+						<span style="--i:7"></span>
+						<span style="--i:8"></span>
+						<span style="--i:9"></span>
+						<span style="--i:10"></span>
+					</div>
+					<div class="box">
+						<span style="--i:1"></span>
+						<span style="--i:2"></span>
+						<span style="--i:3"></span>
+						<span style="--i:4"></span>
+						<span style="--i:5"></span>
+						<span style="--i:6"></span>
+						<span style="--i:7"></span>
+						<span style="--i:8"></span>
+						<span style="--i:9"></span>
+						<span style="--i:10"></span>
+					</div>
 				</div>
 			</div>
+			<style>
+				.ripple_effect .container {
+					display:flex;
+					justify-content:center;
+					align-items:center;
+					overflow:hidden;
+				}
+				.ripple_effect .container .box {
+					position:relative;
+					width:400px;
+					height:400px;
+					display:flex;
+					justify-content:center;
+					align-items:center;
+				}
+				.ripple_effect .container .box span {
+					position:absolute;
+					top:50%;
+					left:50%;
+					transform:translate(-50%,-50%);
+					box-sizing:border-box;
+					border:2px solid #fff;
+					border-radius:50%;
+					animation: ripple_effect 5s linear infinite;
+					animation-delay:calc( -0.5s * var(--i) );
+				}
+				.ripple_effect .container .box:nth-child(2) span {
+					border:none;
+					background:rgba(0,255,0,0.25);
+				}
+				@keyframes ripple_effect {
+					0%		{width:0;height:0;}
+					100%	{width:400px;height:400px;opacity:0;}
+				}
+				@media all and (max-width:768px){
+					.ripple_effect .container {display:block;}
+					.ripple_effect .container .box {width:100%;}
+				}
+			</style>
 		</div>
-		<style>
-			.ripple_effect .container {
-				display:flex;
-				justify-content:center;
-				align-items:center;
-			}
-			.ripple_effect .container .box {
-				position:relative;
-				width:400px;
-				height:400px;
-				display:flex;
-				justify-content:center;
-				align-items:center;
-			}
-			.ripple_effect .container .box span {
-				position:absolute;
-				top:50%;
-				left:50%;
-				transform:translate(-50%,-50%);
-				box-sizing:border-box;
-				border:2px solid #fff;
-				border-radius:50%;
-				animation: ripple_effect 5s linear infinite;
-				animation-delay:calc( -0.5s * var(--i) );
-			}
-			.ripple_effect .container .box:nth-child(2) span {
-				border:none;
-				background:rgba(0,255,0,0.25);
-			}
-			@keyframes ripple_effect {
-				0%		{width:0;height:0;}
-				100%	{width:400px;height:400px;opacity:0;}
-			}
-			@media all and (max-width:768px){
-				.ripple_effect .container {display:block;}
-				.ripple_effect .container .box {width:100%;}
-			}
-		</style>
 	</div>
-	
+
+	<div>
+		<h2>Etc</h2>
+		<div class="progress_box">
+			<div>
+				<div class="percent">
+					<svg>
+						<circle cx="70" cy="70" r="70"></circle>
+						<circle cx="70" cy="70" r="70"></circle>
+					</svg>
+					<div class="number">
+						<h2>87<span>%</span></h2>
+					</div>
+				</div>
+				<h2 class="text">Progress(ie x)</h2>
+			</div>
+			<style>
+				.progress_box > div {
+					position:relative;
+					width:300px;
+					height:300px;
+					margin:0 auto;
+					padding: 50px;
+					display:flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					background:#fff;
+					color: #000;
+				}
+				.progress_box .percent{
+					position: relative;
+					width:150px;
+					height:150px;   
+				}
+				.progress_box .percent svg{
+					position: relative;
+					width:150px;
+					height:150px;
+				}
+				.progress_box .percent svg circle{
+					width:150px;
+					height:150px;
+					fill:none;
+					stroke-width:10;
+					stroke:#000;
+					transform: translate(5px, 5px);
+					stroke-dasharray:440;
+					stroke-dashoffset:440;
+					stroke-linecap:round;
+				}
+				.progress_box .percent svg circle:nth-child(1){
+					stroke-dashoffset:0;
+					stroke:#f3f3f3;
+				}
+				.progress_box .percent svg circle:nth-child(2){
+					stroke-dashoffset:calc(440 - (440  * 87) / 100);
+					stroke:#03a9f4;
+				}
+				.progress_box .percent .number{
+					position: absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					display:flex;
+					justify-content: center;
+					align-items: center;
+					color:#999;
+				}
+				.progress_box .percent .number h2{font-size:48px;}
+				.progress_box .percent .number h2 span{font-size:24px;}
+				.progress_box .percent .text{
+					padding:10px 0 0;
+					color:#999;
+					font-weight:bold;
+					letter-spacing: 1px;
+				}
+			</style>
+		</div>
+		
+		<div class="progress_bar">
+			<div>
+				<section>
+					<h2>Creative Scroll Progress Bar</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div id="progressBar"></div>
+					<div id="scrollPath"></div>
+				</section>
+			</div>
+			<style>
+				.progress_bar > div {
+					width:400px;
+					height:400px;
+					margin:0 auto;
+					overflow-y:scroll;
+				}
+				.progress_bar > div::-webkit-scrollbar {
+					width:0;
+				}
+				.progress_bar section {
+					position:relative;
+					padding:50px 30px;
+					background:#333;
+				}
+				.progress_bar section h2 {
+					font-size:2.5em;
+					color: #fff;
+				}
+				.progress_bar section p {
+					font-size:1.2em;
+					color: #fff;
+				}
+				.progress_bar #scrollPath {
+					position:absolute;
+					top:0;
+					right:0;
+					width:10px;
+					height:100%;
+					background:rgba(255,255,255,0.2);
+				}
+				.progress_bar #progressBar {
+					position:absolute;
+					top:0;
+					right:0;
+					z-index:99;
+					width:10px;
+					/*height:100%;*/
+					background:linear-gradient(to top, #008aff, #00ffe7);
+					animation: progress_bar 5s linear infinite;
+				}
+				@keyframes progress_bar{
+					0%,100% {filter: hue-rotate(0deg);}
+					50%		{filter: hue-rotate(360deg);}
+				}
+				.progress_bar #progressBar:before {
+					content:'';
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					background:linear-gradient(to top, #008aff, #00ffe7);
+					filter:blur(30px);
+				}
+				.progress_bar #progressBar:after {
+					content:'';
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					background:linear-gradient(to top, #008aff, #00ffe7);
+					filter:blur(10px);
+				}
+				@media all and (max-width:768px){
+					.progress_bar > div {width:100%;margin:0 auto;}
+				}
+			</style>
+			<script type="text/javascript">
+				let scrollBox = document.querySelector('.progress_bar > div');
+					
+				scrollBox.onscroll = function(){
+					let progressBar		= document.getElementById('progressBar'),
+						scrollInner		= document.querySelector('.progress_bar section'),
+						maxScrollValue	= scrollInner.offsetHeight - scrollBox.offsetHeight;	// 954 - 400 = 554
+						progressHeight	= ( scrollBox.scrollTop / maxScrollValue ) * 100;		// (200 / 554) * 100 = 36.1%
+						
+					progressBar.style.height = progressHeight + "%";
+					
+					// scrollHeight : 스크롤바 높이를 뺀 내용 전체의 높이
+					// clientHeight : 스크롤바 높이를 뺀 가시적인 높이
+					// offsetHeight : 스크롤바 높이를 포함한 가시적인 높이
+				}
+			</script>
+		</div>
+
+		<div class="position_sticky">
+			<div>
+				<h2>
+					<span style="--i:0">P</span>
+					<span style="--i:1">O</span>
+					<span style="--i:2">S</span>
+					<span style="--i:3">I</span>
+					<span style="--i:4">T</span>
+					<span style="--i:5">I</span>
+					<span style="--i:6">O</span>
+					<span style="--i:7">N</span>
+					<span style="--i:8">_</span>
+					<span style="--i:9">S</span>
+					<span style="--i:10">T</span>
+					<span style="--i:11">I</span>
+					<span style="--i:12">C</span>
+					<span style="--i:13">K</span>
+					<span style="--i:14">Y</span>
+				</h2>
+			</div>
+			<style>
+				.position_sticky h2 {
+					position:relative;
+					display:flex;
+					justify-content:center;
+					background:linear-gradient(0deg, #ff0076, #cc00ff, #ffae00, #1fae99, #afaff9);
+				}
+				.position_sticky h2 span {
+					position:sticky;
+					top:0;
+					line-height:100vh;
+					height:100vh;
+					color:#fff;
+					font-size:6em;
+					margin-top:calc( 100vh * var(--i) );
+				}
+				@media all and (max-width:768px){
+					.position_sticky h2 span {font-size:2em;}
+				}
+			</style>
+		</div>
+	</div>
 	
 </body>
 </html>
