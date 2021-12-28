@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="23" viewBox="0 0 46 23">
+  <g id="그룹_766" data-name="그룹 766" transform="translate(-101 -214)">
+    <g id="그룹_767" data-name="그룹 767" transform="translate(98)">
+      <g id="사각형_2068" data-name="사각형 2068" transform="translate(26 214)" fill="#1473e6" stroke="#1473e6" stroke-width="1">
+        <rect width="23" height="23" rx="11.5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="22" height="22" rx="11" fill="none"/>
+      </g>
+      <g id="구성_요소_148_41" data-name="구성 요소 148 – 41" transform="translate(31.301 220)">
+        <path id="Checkbox" d="M5.751,9,1,4.709,2.127,3.691l3.623,3.2L12.273,1,13.4,2.018Z" transform="translate(-1 1)" fill="#fff"/>
+        <rect id="사각형_556" data-name="사각형 556" width="9" height="9" fill="none"/>
+      </g>
+    </g>
+    <g id="사각형_2073" data-name="사각형 2073" transform="translate(101 214)" fill="#fff" stroke="#afafaf" stroke-width="1">
+      <rect width="23" height="23" rx="11.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="22" height="22" rx="11" fill="none"/>
+    </g>
+    <path id="Checkbox-2" data-name="Checkbox" d="M5.751,9,1,4.709,2.127,3.691l3.623,3.2L12.273,1,13.4,2.018Z" transform="translate(105.301 221)" fill="#afafaf"/>
+  </g>
+</svg>
