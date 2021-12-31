@@ -1,22 +1,28 @@
 ## 오경훈 Porfolio
 
-프로젝트와 스터디를 하면서 사용했던 내용을 정리했습니다.
+### Vue 프로젝트
+- [라이나생명 타로카드](https://github.com/kei5693/portfolio-lina-tarot-simulator)
+- [라이나생명 고연령 건강빙고](https://github.com/kei5693/portfolio-lina-bingo-simulator)
+- [라이나생명 저연령 건강OX](https://github.com/kei5693/portfolio-lina-health-simulator)
 
-### Vue.js
+- [교보생명 보험상품 시뮬레이터](https://github.com/kei5693/portfolio-kyobo-diy-insurance)
+- [교보생명 드림ON 매뉴얼](https://github.com/kei5693/portfolio-kyobo-dream-on-manual)
+- [교보생명 간편가입보험 시뮬레이터](https://github.com/kei5693/portfolio-kyobo-dreamplaner-survey)
+
+- [신한생명 세일즈톡](https://github.com/kei5693/portfolio-shinhan-health-talk)
+- [신한생명 헬스톡](https://github.com/kei5693/portfolio-shinhan-health-talk)
+
+### 자바스크립트 내용 정리
 - [vue_test](https://kei5693.github.io/work/study/vue/vue_test.html)
-
-### 자바스크립트 200제
-- [javascript_200](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
-
-### 자바스크립트 기초
-- [class_01](https://kei5693.github.io/work/study/javascript/class_01.html) : 제이쿼리 이벤트 만들기
-- [class_02](https://kei5693.github.io/work/study/javascript/class_02.html) : 자바스크립트 기본 문법(변수, 데이터형, 연산자)
-- [class_03](https://kei5693.github.io/work/study/javascript/class_03.html) : 자바스크립트 기본 문법(if문, 반복문)
-- [class_04](https://kei5693.github.io/work/study/javascript/class_04.html) : 자바스크립트 기본 문법(함수, 배열)
-- [class_05](https://kei5693.github.io/work/study/javascript/media_queries.html) : 미디어쿼리
+- [javascript_200제](https://kei5693.github.io/work/study/javascript_200/javascript_200.html)
+- [제이쿼리 이벤트](https://kei5693.github.io/work/study/javascript/class_01.html)
+- [자바스크립트(변수, 데이터형, 연산자)](https://kei5693.github.io/work/study/javascript/class_02.html)
+- [자바스크립트(if문, 반복문)](https://kei5693.github.io/work/study/javascript/class_03.html) 
+- [자바스크립트(함수, 배열)](https://kei5693.github.io/work/study/javascript/class_04.html)
+- [미디어쿼리](https://kei5693.github.io/work/study/javascript/media_queries.html)
 
 ### 설문조사
-- [survey](https://kei5693.github.io/work/study/survey/survey_page.html)
+- [survey](https://kei5693.github.io/work/study/survey/survey_page.html) : html, css, js, jquery
 
 ### Css Animation Test
 - [css_test](https://kei5693.github.io/work/study/css_test/css_test.html)
