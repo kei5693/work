@@ -21,20 +21,10 @@
 - [자바스크립트(함수, 배열)](https://kei5693.github.io/work/study/javascript/class_04.html)
 - [미디어쿼리](https://kei5693.github.io/work/study/javascript/media_queries.html)
 
-### 설문조사
-- [survey](https://kei5693.github.io/work/study/survey/survey_page.html) : html, css, js, jquery
-
-### Css Animation Test
-- [css_test](https://kei5693.github.io/work/study/css_test/css_test.html)
-
-### 슬라이드
-- [slide](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 마우스, 터치
-
-### 디자인 스크롤 박스
-- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 키보드, 마우스, 터치
-
-### 패럴렉스 스크롤
-- [parallax_scroll](https://kei5693.github.io/work/study/scroll/parallax_scroll/index.html) : 스크롤에 따른 애니메이션 동작
-
-### 마우스 이벤트
-- [image_zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 이미지 확대(PC용)
+### UI 테스트
+- [survey](https://kei5693.github.io/work/study/survey/survey_page.html) : 설문조사(html, css, js, jquery)
+- [css_test](https://kei5693.github.io/work/study/css_test/css_test.html) : Css Animation Test
+- [slide](https://kei5693.github.io/work/study/slide/slide_flick/index.html) : 슬라이드(마우스, 터치)
+- [design_scroll](https://kei5693.github.io/work/study/scroll/design_scroll/index.html) : 디자인 스크롤 박스(키보드, 마우스, 터치)
+- [parallax_scroll](https://kei5693.github.io/work/study/scroll/parallax_scroll/index.html) : 패럴렉스 스크롤(스크롤에 따른 애니메이션 동작)
+- [image_zoom](https://kei5693.github.io/work/study/mouse_event/img_zoom/index.html) : 마우스 이벤트(이미지 확대 PC용)
